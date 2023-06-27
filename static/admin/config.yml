@@ -1,5 +1,8 @@
 backend:
-  name: git-gateway
+  name: github
+  repo: abdelamhorizont/anima-ona # replace this with your repo info
+  use_graphql: true
+  # name: git-gateway
   branch: master
   commit_messages:
     create: "Create {{collection}} “{{slug}}”"
