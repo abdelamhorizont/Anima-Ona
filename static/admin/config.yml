@@ -11,7 +11,7 @@ backend:
     uploadMedia: "[skip ci] Upload “{{path}}”"
     deleteMedia: "[skip ci] Delete “{{path}}”"
 
-local_backend: true
+local_backend: false
 media_folder: static/img
 public_folder: /img
 
@@ -125,6 +125,18 @@ collections:
                 ],
             }
       - file: "src/pages/about/index.md"
+        label: "About"
+        name: "about"
+        fields:
+          - {
+              label: "Template Key",
+              name: "templateKey",
+              widget: "hidden",
+              default: "about-page",
+            }
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Body", name: "body", widget: "markdown" }
+      - file: "src/pages/contact/index.md"
         label: "About"
         name: "about"
         fields:
