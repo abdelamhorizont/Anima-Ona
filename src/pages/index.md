@@ -1,7 +1,7 @@
 ---
 templateKey: index-page
 title: Great shit with a conscience
-image: /img/home-jumbotron.jpg
+image: /img/bildschirmfoto-2023-04-30-um-15.18.47.jpg
 heading: Great shit with a conscience
 subheading: Support sustainable farming while enjoying a cup
 mainpitch:
