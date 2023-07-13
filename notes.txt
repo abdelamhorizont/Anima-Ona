@@ -1,0 +1,5 @@
+Do 13. Juli 2023
+- global styling, reset, font
+- Layout (Navbar, Footer) styling
+- landing-animation
+- projectlist

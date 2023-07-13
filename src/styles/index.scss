@@ -1,0 +1,43 @@
+.landing-anim{
+    position: fixed;
+    top: 0rem;
+    left: 0rem;
+
+    width: 100vw;
+    height: 100vh;
+
+    overflow: hidden;
+
+    .landing-image{
+        width: 100%;
+        height: 100%; 
+        overflow: hidden;
+    }
+
+
+    .landing-text-wrapper{
+        position: fixed;
+        top: 0rem;
+        left: 0rem;
+        z-index: 10;
+
+        width: 100%;
+        height: 100%;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .landing-text{
+            font-size: 3.4rem;
+            text-align: center;
+            
+            *{
+                color: white;
+                // margin-bottom: 1rem;
+                line-height: 3.5rem;
+            }
+        }
+
+    }
+}

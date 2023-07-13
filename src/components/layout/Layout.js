@@ -37,16 +37,18 @@ const Layout = ({ children }) => {
 
       <div>{children}</div>
 
-      <div className="Logo">
+    <div className="nav-bar">
+      <div className="contact">
         <div className="title">anima ona</div>
         <div className="adress">Strohberg 20, 70180 Stuttgart</div>
-        <div className="mail">animaona@gmail.com</div>
+        <div className="mail"><a href="mailto:animaona@gmail.com">animaona@gmail.com</a></div>
         <div className="insta-link">Instagram</div>
       </div>
-      <div className="nav-links">
+      <div className="nav-links-footer">
         <Link to="/imprint">Imprint</Link>
         <Link to="/privacy-policy">Privacy Policy</Link>
       </div>
+    </div>
     </div>
   )
 }

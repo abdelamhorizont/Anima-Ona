@@ -1,5 +1,5 @@
 .layout{
-    width: 100vw;
+    width: calc(100vw - 1.4rem);
     padding: 0.7rem;
     overflow: hidden;
 
@@ -8,9 +8,25 @@
         display: flex;
         justify-content: space-between;
 
+        .contact{
+            width: 75vw;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0rem 2rem;
+        }
+
         .nav-links{
             display: flex;
-            gap: 2rem;
+            gap: 0rem 2rem;
+        }
+
+        .nav-links-footer{
+            // width: 25vw;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: flex-end;
+            align-items: flex-start;
+            // gap: 2rem;
         }
     }
 }
