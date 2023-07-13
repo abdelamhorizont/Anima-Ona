@@ -1,6 +1,6 @@
 html {
    scroll-behavior: smooth;
-   font-size: clamp(18px, 1.3vw, 24px);
+   font-size: clamp(12px, 1.3vw, 24px);
 }
 
 body{
@@ -8,4 +8,6 @@ body{
    -webkit-appearance: none;
    -moz-appearance: none;
    appearance: none;
+
+
 }

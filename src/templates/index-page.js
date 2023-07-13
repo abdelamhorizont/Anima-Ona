@@ -2,10 +2,11 @@ import React from "react";
 import { Link, graphql } from "gatsby";
 import { getImage, GatsbyImage } from "gatsby-plugin-image";
 
-import Layout from "../components/Layout";
+import Layout from "../components/layout/Layout";
 
 import '../styles/reset.css'
 import '../styles/global.scss'
+import '../styles/typo.scss'
 
 const IndexPage = ({ data }) => {
   const { frontmatter } = data.markdownRemark
