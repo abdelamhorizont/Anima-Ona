@@ -5,8 +5,8 @@ import { getImage, GatsbyImage } from "gatsby-plugin-image";
 import Layout from "../components/Layout";
 
 const IndexPage = ({ data }) => {
-  const { frontmatter } = data.markdownRemark;
-  const image = getImage(frontmatter.image) ;
+  const { frontmatter } = data.markdownRemark
+  const image = getImage(frontmatter.image) 
 
   return (
     <Layout>
