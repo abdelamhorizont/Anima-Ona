@@ -4,6 +4,9 @@ import { getImage, GatsbyImage } from "gatsby-plugin-image";
 
 import Layout from "../components/Layout";
 
+import '../styles/reset.css'
+import '../styles/global.scss'
+
 const IndexPage = ({ data }) => {
   const { frontmatter } = data.markdownRemark
   const image = getImage(frontmatter.image) 
@@ -11,6 +14,7 @@ const IndexPage = ({ data }) => {
   return (
     <Layout>
       <h1 className="title">{frontmatter.title}</h1>
+      <h2 className="subtitle">{frontmatter.subheading}</h2>
       <GatsbyImage
         image={image}
         alt=""
