@@ -19,7 +19,7 @@ export const BlogPostTemplate = ({
 
   return (
     <section className="section">
-      {helmet || ""}
+      {/* {helmet || ""}
       <div className="container content">
         <div className="columns">
           <div className="column is-10 is-offset-1">
@@ -42,7 +42,7 @@ export const BlogPostTemplate = ({
             ) : null}
           </div>
         </div>
-      </div>
+      </div> */}
     </section>
   );
 };
@@ -60,7 +60,7 @@ const BlogPost = ({ data }) => {
 
   return (
     <Layout>
-      <BlogPostTemplate
+      {/* <BlogPostTemplate
         content={post.html}
         contentComponent={HTMLContent}
         description={post.frontmatter.description}
@@ -73,9 +73,9 @@ const BlogPost = ({ data }) => {
             />
           </Helmet>
         }
-        tags={post.frontmatter.tags}
+        tags={post.frontmatter?.tags}
         title={post.frontmatter.title}
-      />
+      /> */}
     </Layout>
   );
 };
@@ -97,7 +97,6 @@ export const pageQuery = graphql`
         date(formatString: "MMMM DD, YYYY")
         title
         description
-        tags
       }
     }
   }

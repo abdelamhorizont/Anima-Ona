@@ -1,11 +1,17 @@
 ---
+<<<<<<< HEAD
 templateKey: 'work-post'
 title: 'Just in: small batch of Jamaican Blue Mountain in store next week'
 date: 2017-01-04T15:04:10.000Z
+=======
+templateKey: blog-post
+title: "DKB Pavillion "
+date: 2017-01-04T15:04:00.000Z
+description: We’re proud to announce that we’ll be offering a small batch of
+  Jamaica Blue Mountain coffee beans in our store next week.
+>>>>>>> ebef0e3fd366f97edfa0ef2b1b2dd08ab3effb17
 featuredpost: true
-description: >-
-  We’re proud to announce that we’ll be offering a small batch of Jamaica Blue
-  Mountain coffee beans in our store next week.
+featuredimage: assets/img/bildschirmfoto-2023-04-30-um-15.18.47.jpg
 tags:
   - jamaica
   - green beans
