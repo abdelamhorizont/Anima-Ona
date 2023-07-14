@@ -6,7 +6,7 @@ import './projectlist.scss'
 export default function Projectlist() {
     const data = useStaticQuery(graphql`
 query {
-  allMarkdownRemark(filter: {frontmatter: {templateKey: {eq: "blog-post"}}}) {
+  allMarkdownRemark(filter: {frontmatter: {templateKey: {eq: "work-post"}}}) {
     edges {
       node {
         frontmatter {

@@ -80,7 +80,7 @@ export default function BlogRoll() {
         query BlogRollQuery {
           allMarkdownRemark(
             sort: { order: DESC, fields: [frontmatter___date] }
-            filter: { frontmatter: { templateKey: { eq: "blog-post" } } }
+            filter: { frontmatter: { templateKey: { eq: "work-post" } } }
           ) {
             edges {
               node {
