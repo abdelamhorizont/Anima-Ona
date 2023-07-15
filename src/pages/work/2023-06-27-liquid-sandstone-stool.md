@@ -7,4 +7,5 @@ featuredpost: true
 featuredimage: /img/blog-index.jpg
 tags:
   - Object
+  - Research
 ---
