@@ -5,6 +5,7 @@ import { motion } from "framer-motion"
 
 import Layout from "../components/layout/Layout";
 import Projectlist from "../components/projectlist/projectlist";
+// import Tags from "../components/tags/tags";
 
 import '../styles/reset.css'
 import '../styles/global.scss'
@@ -38,6 +39,8 @@ const IndexPage = ({ data }) => {
       </motion.div>
 
       {/* tags */}
+      {/* <Tags /> */}
+
       {/* projectlist */}
       <Projectlist /> 
       
