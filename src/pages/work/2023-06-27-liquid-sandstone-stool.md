@@ -8,4 +8,3 @@ featuredimage: /img/blog-index.jpg
 tags:
   - Object
 ---
-j﻿jj
