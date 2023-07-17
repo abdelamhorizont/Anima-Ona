@@ -63,7 +63,7 @@ query {
                 <h3>
                   {project.node.frontmatter.date}
                 </h3>
-                <img src={'../../' + project.node.frontmatter.featuredimage} alt="" />
+                <img src={'src/' + project.node.frontmatter.featuredimage} alt="" />
               </li>
             )
           })
