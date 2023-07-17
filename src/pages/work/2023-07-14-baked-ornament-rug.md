@@ -1,7 +1,7 @@
 ---
 templateKey: work-post
 title: Baked Ornament Rug
-date: 2023-07-14T10:47:07.296Z
+date: 2022-11-16T11:47:07.296Z
 featuredimage: assets/img/animaona.baked-ornament-rug-ii.2021.©animaona_05.jpeg
 tags:
   - Object
