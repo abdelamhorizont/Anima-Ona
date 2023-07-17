@@ -1,7 +1,7 @@
 ---
 templateKey: work-post
 title: Bruch Stool
-date: 2021-10-21T11:01:49.376Z
+date: 2020-09-08T11:01:49.376Z
 featuredimage: assets/img/dsc02991_1.jpeg
 tags:
   - Object
