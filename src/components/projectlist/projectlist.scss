@@ -1,20 +1,20 @@
-.projectlist{
+.projectlist {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 1.4rem;
 
-    li{
+    li {
         margin-bottom: 2rem;
 
         display: flex;
         gap: 0rem 1rem;
-        
-        h3{
+
+        h3 {
             font-size: 0.7rem;
         }
     }
 }
 
-.tags{
+.tags {
     display: flex;
     width: 100%;
     justify-content: space-between;
@@ -26,10 +26,28 @@
     transition: all 0.5s ease;
 }
 
-.inactiveTag{
+.inactiveTag {
     color: transparent;
-    opacity: 0.8;
+    opacity: 0.6;
     text-shadow: black 0px 0 3px;
     transition: all 0.5s ease;
+    z-index: 0;
+
+    h1,
+    h3 {
+        color: transparent;
+        opacity: 0.8;
+    }
+}
+
+@media screen and (min-width: 720px) {
+    .projectlist {
+        display: flex;
+        flex-wrap: wrap;
+
+        li{
+            width: 50%;
+        }
+    }
 
 }

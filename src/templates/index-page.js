@@ -1,7 +1,7 @@
 import React from "react";
 import { Link, graphql } from "gatsby";
 import { getImage, GatsbyImage } from "gatsby-plugin-image";
-import { motion } from "framer-motion"
+import { motion, AnimatePresence } from "framer-motion"
 
 import Layout from "../components/layout/Layout";
 import Projectlist from "../components/projectlist/projectlist";
@@ -21,8 +21,17 @@ const IndexPage = ({ data }) => {
     <Layout>
       <motion.div
         className="landing-anim"
-        initial={{ opacity: 1 }}
-        animate={{ opacity: 0 }}
+        initial={{ 
+          opacity: 1, 
+          filter: 'blur(0px)'
+        }}
+        animate={{
+          opacity: 0, 
+          filter: 'blur(10px)',
+          transitionEnd: {
+            display: "none",
+          },
+        }}
         transition={{ duration: 1.5, delay: 1 }}
       >
         <GatsbyImage
@@ -42,8 +51,8 @@ const IndexPage = ({ data }) => {
       {/* <Tags /> */}
 
       {/* projectlist */}
-      <Projectlist /> 
-      
+      <Projectlist />
+
 
       {/* cookies */}
     </Layout>
