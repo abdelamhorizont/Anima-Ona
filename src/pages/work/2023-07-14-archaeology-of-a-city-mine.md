@@ -1,7 +1,7 @@
 ---
 templateKey: work-post
 title: "Archaeology of a city mine "
-date: 2023-07-14T10:38:37.776Z
+date: 2022-10-01T10:38:37.776Z
 description: >
   Over a period of two years (2019-2022), we investigated the major construction
   site »Stuttgart 21« in an artistic-experimental way. The construction site was
