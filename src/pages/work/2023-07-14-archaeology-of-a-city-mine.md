@@ -12,7 +12,7 @@ description: >
   palimpsesting process, the finds were further processed, thus giving them a
   new value. 
 featuredpost: true
-featuredimage: assets/img/dscf0001_1.jpeg
+featuredimage: img/dscf0001_1.jpeg
 tags:
   - Exhibition
   - Space

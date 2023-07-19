@@ -2,7 +2,7 @@
 templateKey: work-post
 title: Wandrelief Serie
 date: 2023-07-14T10:48:07.402Z
-featuredimage: assets/img/2022-3-24-dsc03694_1-kopie.jpeg
+featuredimage: img/2022-3-24-dsc03694_1-kopie.jpeg
 tags:
   - Object
   - Exhibition

@@ -2,7 +2,7 @@
 templateKey: work-post
 title: Dolmen Table
 date: 2021-07-27T10:56:01.591Z
-featuredimage: assets/img/dolmen_table_animaona_01-kopie.jpeg
+featuredimage: img/dolmen_table_animaona_01-kopie.jpeg
 tags:
   - Object
 ---

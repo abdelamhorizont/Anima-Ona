@@ -13,14 +13,14 @@ backend:
 
 local_backend: false
 media_folder: static/img
-public_folder: assets/img
+public_folder: /img
 
 collections:
   - name: "work"
     label: "Work"
     folder: "src/pages/work"
     create: true
-    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    slug: "{{slug}}"
     fields:
       - {
           label: "Template Key",

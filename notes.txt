@@ -3,3 +3,8 @@ Do 13. Juli 2023
 - Layout (Navbar, Footer) styling
 - landing-animation
 - projectlist
+
+Mo 17. Juli
+- projectlist desktop
+- random margin
+- background images

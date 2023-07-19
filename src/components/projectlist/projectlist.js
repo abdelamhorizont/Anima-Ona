@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { Link, useStaticQuery, graphql } from "gatsby";
 
+import Project from '../project/project'
 import './projectlist.scss'
 
 function randomNumber(min, max) { // min and max included
@@ -15,6 +16,9 @@ query {
   allMarkdownRemark(filter: {frontmatter: {templateKey: {eq: "work-post"}}}) {
     edges {
       node {
+        fields {
+          slug
+        }
         frontmatter {
           title
           date(formatString: "YYYY")
@@ -33,8 +37,6 @@ query {
 
   const projectlist = data.allMarkdownRemark.edges
 
-  const marginTitle = React.useMemo(() =>
-    [...new Array(projectlist.length)].map(() => randomNumber(0, 30)),[])
 
   return (
     <>
@@ -56,15 +58,7 @@ query {
         {
           projectlist.map((project, i) => {
             return (
-              <li className={activeTag != 'All' && (!project.node.frontmatter.tags.includes(activeTag) && 'inactiveTag')}>
-                <h1 style={{ marginLeft: marginTitle[i] + 'vw' }}>
-                  {project.node.frontmatter.title}
-                </h1>
-                <h3>
-                  {project.node.frontmatter.date}
-                </h3>
-                <img src={'src/' + project.node.frontmatter.featuredimage} alt="" />
-              </li>
+              <Project project={project} activeTag={activeTag} />
             )
           })
         }

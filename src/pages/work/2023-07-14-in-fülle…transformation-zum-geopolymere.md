@@ -2,7 +2,7 @@
 templateKey: work-post
 title: In Fülle…Transformation zum Geopolymere
 date: 2021-11-08T11:48:47.302Z
-featuredimage: assets/img/_dsc6275.jpeg
+featuredimage: img/_dsc6275.jpeg
 tags:
   - Object
   - Research
