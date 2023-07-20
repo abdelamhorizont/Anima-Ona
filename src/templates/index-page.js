@@ -51,7 +51,7 @@ const IndexPage = ({ data }) => {
       {/* <Tags /> */}
 
       {/* projectlist */}
-      <Projectlist />
+      {/* <Projectlist /> */}
 
 
       {/* cookies */}

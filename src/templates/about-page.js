@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import { graphql } from "gatsby";
 import Layout from "../components/layout/Layout";
-import Content, { HTMLContent } from "../components/Content";
+import Content, { HTMLContent } from "../components/content/content";
 
 // eslint-disable-next-line
 export const AboutPageTemplate = ({ title, content, contentComponent }) => {

@@ -1,8 +1,10 @@
 import * as React from "react";
 import PropTypes from "prop-types";
 
-export const HTMLContent = ({ content, className }) => (
-  <div className={className} dangerouslySetInnerHTML={{ __html: content }} />
+import './content.scss'
+
+export const HTMLContent = ({ content }) => (
+  <div className='html-content' dangerouslySetInnerHTML={{ __html: content }} />
 );
 
 const Content = ({ content, className }) => (

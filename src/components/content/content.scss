@@ -1,0 +1,42 @@
+.html-content{
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.4rem;
+    line-height: 1.7rem;
+
+    ul{
+        display: grid;
+        grid-auto-flow: column;
+        grid-auto-columns: 1fr;
+        grid-template-columns: repeat(auto-fit, minmax(10em, 33vw));
+
+        margin: 1.5rem;
+        margin-bottom: 10vh;
+
+    }
+
+    li{
+        
+        img{
+            width: 100%;
+            object-fit: contain;
+        }
+    }
+
+    
+    p { 
+        width: 66%;
+        margin: 1.5rem;
+        margin-bottom: 10vh;
+
+        img{
+            width: 100vw;
+            margin: -1.5rem;
+        };
+    }
+
+}

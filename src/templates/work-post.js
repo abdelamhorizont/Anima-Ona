@@ -4,16 +4,17 @@ import { kebabCase } from "lodash";
 import { Helmet } from "react-helmet";
 import { graphql, Link } from "gatsby";
 import Layout from "../components/layout/Layout";
-import Content, { HTMLContent } from "../components/Content";
+import Content, { HTMLContent } from "../components/content/content";
 
 // eslint-disable-next-line
+import '../styles/work-post.scss'
 
 const BlogPost = ({ data }) => {
   const { markdownRemark: post } = data;
 
   return (
     <Layout>
-     <HTMLContent content={post.html} />
+      <HTMLContent content={post.html} />
     </Layout>
   )
 }

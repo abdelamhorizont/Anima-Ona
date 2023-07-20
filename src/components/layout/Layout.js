@@ -4,6 +4,8 @@ import { Helmet } from "react-helmet";
 import useSiteMetadata from "../SiteMetadata";
 import { withPrefix, Link } from "gatsby";
 
+import Projectlist from "../projectlist/projectlist";
+
 import './layout.scss'
 
 const Layout = ({ children }) => {
@@ -49,6 +51,9 @@ const Layout = ({ children }) => {
         <Link to="/privacy-policy">Privacy Policy</Link>
       </div>
     </div>
+
+    <Projectlist />
+
     </div>
   )
 }
