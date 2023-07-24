@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Link, useStaticQuery, graphql } from "gatsby";
 
 import Project from '../project/project'
@@ -10,7 +10,7 @@ function randomNumber(min, max) { // min and max included
   )
 }
 
-export default function Projectlist() {
+export default function Projectlist({ workpost, hiddenTag }) {
   const data = useStaticQuery(graphql`
 query {
   allMarkdownRemark(filter: {frontmatter: {templateKey: {eq: "work-post"}}}) {
@@ -32,10 +32,15 @@ query {
 `)
 
   const [activeTag, setactiveTag] = useState('All')
+  const [tagChange, settagChange] = useState(false)
 
   const tags = ["All", "Object", "Space", "Research", "Exhibition"]
-
   const projectlist = data.allMarkdownRemark.edges
+
+  useEffect(() => {
+    settagChange(true)
+  }, [activeTag])
+  
 
 
   return (
@@ -45,7 +50,6 @@ query {
           tags.map(tag => {
             return (
               <button
-                // className={activeTag != 'All' && (tag != activeTag && 'inactiveTag')}
                 className={tag != activeTag && 'inactiveTag'}
                 onClick={() => setactiveTag(tag)}
               >{tag}</button>
@@ -58,7 +62,7 @@ query {
         {
           projectlist.map((project, i) => {
             return (
-              <Project project={project} activeTag={activeTag} />
+              <Project project={project} activeTag={activeTag} workpost={workpost} hiddenTag={hiddenTag} />
             )
           })
         }

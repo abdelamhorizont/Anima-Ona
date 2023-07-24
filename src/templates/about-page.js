@@ -1,54 +1,30 @@
 import React from "react";
-import PropTypes from "prop-types";
-import { graphql } from "gatsby";
+import { Link, graphql } from "gatsby";
+import { getImage, GatsbyImage } from "gatsby-plugin-image";
+import { motion, AnimatePresence } from "framer-motion"
+
 import Layout from "../components/layout/Layout";
 import Content, { HTMLContent } from "../components/content/content";
 
-// eslint-disable-next-line
-export const AboutPageTemplate = ({ title, content, contentComponent }) => {
-  const PageContent = contentComponent || Content;
+// import Tags from "../components/tags/tags";
 
-  return (
-    <section className="section section--gradient">
-      <div className="container">
-        <div className="columns">
-          <div className="column is-10 is-offset-1">
-            <div className="section">
-              <h2 className="title is-size-3 has-text-weight-bold is-bold-light">
-                {title}
-              </h2>
-              <PageContent className="content" content={content} />
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-};
+import '../styles/reset.css'
+import '../styles/global.scss'
+import '../styles/typo.scss'
 
-AboutPageTemplate.propTypes = {
-  title: PropTypes.string.isRequired,
-  content: PropTypes.string,
-  contentComponent: PropTypes.func,
-};
+import '../styles/index.scss'
 
 const AboutPage = ({ data }) => {
-  const { markdownRemark: post } = data;
+  const { html } = data.markdownRemark
 
   return (
     <Layout>
-      <AboutPageTemplate
-        contentComponent={HTMLContent}
-        title={post.frontmatter.title}
-        content={post.html}
-      />
+      <HTMLContent content={html} />
     </Layout>
-  );
-};
+  )
+}
 
-AboutPage.propTypes = {
-  data: PropTypes.object.isRequired,
-};
+
 
 export default AboutPage;
 

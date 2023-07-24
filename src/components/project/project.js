@@ -7,17 +7,20 @@ function randomNumber(min, max) { // min and max included
     )
 }
 
-export default function Project({ project, activeTag }) {
+export default function Project({ project, activeTag, workpost, hiddenTag }) {
+    const isBrowser = () => typeof window !== "undefined"
+    const mobile = isBrowser() && window.screen.width < 720
 
 
     const marginTitle = React.useMemo(() => randomNumber(0, 30), [])
-
     const [imageShown, setImageShown] = useState(false);
-    // console.log(activeTag);
+
+    // const hiddenTag = "Liquid Sandstone Stool"
 
     return (
         <>
-            <li className={activeTag != 'All' && (!project.node.frontmatter.tags.includes(activeTag) && 'inactiveTag')}>
+            <li className={workpost ? (hiddenTag != project.node.frontmatter.title && 'hidden-tag') 
+            : (activeTag != 'All' && (!project.node.frontmatter.tags.includes(activeTag) && 'inactiveTag'))}>
                 <Link
                     to={project.node.fields.slug}
                     onMouseEnter={() => setImageShown(true)}
@@ -33,9 +36,12 @@ export default function Project({ project, activeTag }) {
 
                 </Link>
 
-                <div className='image-contaner' style={{ opacity: imageShown ? 1 : 0 }}>
-                    <img src={"" + project.node.frontmatter.featuredimage} alt="" />
-                </div>
+                {
+                    !mobile &&
+                    <div className='image-contaner' style={{ opacity: imageShown ? 1 : 0 }}>
+                        <img src={"" + project.node.frontmatter.featuredimage} alt="" />
+                    </div>
+                }
             </li>
 
         </>

@@ -8,3 +8,6 @@ Mo 17. Juli
 - projectlist desktop
 - random margin
 - background images
+
+nicht möglich:
+- Projektliste keine umbrüche

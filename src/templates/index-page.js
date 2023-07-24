@@ -52,12 +52,12 @@ const IndexPage = ({ data }) => {
 
       {/* projectlist */}
       {/* <Projectlist /> */}
-
+      <div className="empty-page-fill"> </div>
 
       {/* cookies */}
     </Layout>
-  );
-};
+  )
+}
 
 
 export default IndexPage;

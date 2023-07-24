@@ -8,7 +8,7 @@ import Projectlist from "../projectlist/projectlist";
 
 import './layout.scss'
 
-const Layout = ({ children }) => {
+const Layout = ({ children, workpost, hiddenTag }) => {
   const { title, description } = useSiteMetadata();
   return (
     <div className="layout">
@@ -27,9 +27,9 @@ const Layout = ({ children }) => {
       </Helmet>
 
       <div className="nav-bar">
-        <div className="Logo">
-          <Link to="/" className="title">anima ona</Link>
-          <div className="subtitle">studio for research, art and design</div>
+        <div className="logo">
+          <Link to="/" className="title"><h1>anima ona</h1></Link>
+          <div className="subtitle"><h2>studio for research, art and design</h2></div>
         </div>
         <div className="nav-links">
           <Link to="/contact">Contact</Link>
@@ -37,14 +37,19 @@ const Layout = ({ children }) => {
         </div>
       </div>
 
+      <div className="nav-bar-fill-space"></div>
+
+      <Projectlist workpost={workpost} hiddenTag={hiddenTag} />
+
       <div>{children}</div>
 
-    <div className="nav-bar">
+    <div className="footer">
       <div className="contact">
-        <div className="title">anima ona</div>
-        <div className="adress">Strohberg 20, 70180 Stuttgart</div>
+        <div className="title"><h1>anima ona</h1></div>
+        <div className="adress"><h2>Strohberg 20, 70180 Stuttgart</h2></div>
+        
         <div className="mail"><a href="mailto:animaona@gmail.com">animaona@gmail.com</a></div>
-        <div className="insta-link">Instagram</div>
+        <div className="insta-link"><a href='https://www.instagram.com/animaona/?hl=en' target="blank">Instagram</a></div>
       </div>
       <div className="nav-links-footer">
         <Link to="/imprint">Imprint</Link>
@@ -52,7 +57,6 @@ const Layout = ({ children }) => {
       </div>
     </div>
 
-    <Projectlist />
 
     </div>
   )

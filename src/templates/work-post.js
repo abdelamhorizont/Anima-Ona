@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import PropTypes from "prop-types";
 import { kebabCase } from "lodash";
 import { Helmet } from "react-helmet";
@@ -11,9 +11,10 @@ import '../styles/work-post.scss'
 
 const BlogPost = ({ data }) => {
   const { markdownRemark: post } = data;
+  const [hiddenTag, setHiddenTag] = useState(post.frontmatter.title)
 
   return (
-    <Layout>
+    <Layout workpost={true} hiddenTag={hiddenTag}>
       <HTMLContent content={post.html} />
     </Layout>
   )
