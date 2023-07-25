@@ -10,4 +10,6 @@ Mo 17. Juli
 - background images
 
 nicht möglich:
-- Projektliste keine umbrüche
+- Projektliste keine umbrüche nach jahr
+- workseiten Raster, bild über zweidrittel nicht möglich 
+- about seite seperat

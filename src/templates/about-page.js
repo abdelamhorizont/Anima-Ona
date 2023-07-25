@@ -18,7 +18,7 @@ const AboutPage = ({ data }) => {
   const { html } = data.markdownRemark
 
   return (
-    <Layout>
+    <Layout workpost={true} >
       <HTMLContent content={html} />
     </Layout>
   )
