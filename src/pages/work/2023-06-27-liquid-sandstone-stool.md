@@ -17,8 +17,6 @@ Over a period of two years (2019-2022), we investigated the major construction s
 
 Over a period of two years (2019-2022), we investigated the major construction site »Stuttgart 21« in an artistic-experimental way. The construction site was reinterpreted as an archaeological site. In the context of this work, we take on the role of excavators by photographically documenting the construction site, collecting finds,3D scanning them, archiving them, and examining them for their aesthetic and functional characteristics. In a kind of modern palimpsesting process, the finds were further processed, thus giving them a new value.
 
-
-
 * ![](/img/2019_10_r1-04836-0008_1.jpeg)
 * ![](/img/2019_10_r1-04836-0017_1.jpeg)
 * ![](/img/2019_10_r1-04836-0018_1.jpeg)
@@ -36,21 +34,17 @@ Over a period of two years (2019-2022), we investigated the major construction s
 
 
 
-
-
 *
-*   ![](/img/dscf0034_1.jpeg)
+* ![](/img/dscf0034_1.jpeg)
 
   ###### Ausstelungsansicht 2022
-*   ![exhibition view](/img/dscf0037_1.jpeg "exhibition, 2022")
+* ![exhibition view](/img/dscf0037_1.jpeg "exhibition, 2022")
 
   ###### Ausstelungsansicht 2022
 
 ![exhibition, 2022](/img/besucherinnen_brāhha_00904_1.jpeg "exhibition, 2022")
 
 ###### Ausstelungsansicht 2022
-
-
 
 Notes, References and External Links
 1 [Stuttgart 21 ](https://www.bahnprojekt-stuttgart-ulm.de/aktuell/)is a construction site reinterpreted as an archaeological site. In the context of this work, we take on the role of excavators by photographically documenting the construction site, 
