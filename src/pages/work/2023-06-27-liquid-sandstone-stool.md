@@ -48,17 +48,17 @@ Over a period of two years (2019-2022), we investigated the major construction s
 
 ###### Ausstelungsansicht 2022
 
-Notes, References and External Links
+###### Notes, References and External Links
 1 [Stuttgart 21 ](https://www.bahnprojekt-stuttgart-ulm.de/aktuell/)is a construction site reinterpreted as an archaeological site. In the context of this work, we take on the role of excavators by photographically documenting the construction site, 
 2 [The installation Erdraum](https://www.google.com/search?q=The+installation+Erdraum&rlz=1C5CHFA_enDE1032DE1035&oq=The+installation+Erdraum&aqs=chrome..69i57j69i64.575j0j7&sourceid=chrome&ie=UTF-8) was shown as part of the exhibition Archaeology of a city mine in the project space Kunst()Klima from 16.09.–13.10.2022.
 The earth room invites visitors to „go underground“ and serves as a platform for the various contributions to the project Archaeology of a city mine, which in different ways allow the processes of the construction site to be viewed in a new context. 
 
-Contributors
+###### Contributors
 Concept, Design: [Freia Achenbach,](https://freia-achenbach.com/) [June Fàbregas](https://www.google.com/)
 Graphic Design: [Tamara Wirth](https://www.google.com/), [Niklas Berlec](https://www.google.com/), [Valentin Alisch](https://www.google.com/), [Tobias Hönow](https://www.google.com/)
 Video: [Tamara Wirth](https://www.google.com/)
 Photo Credits: [Philipp Schell](https://www.google.com/), [Tobias Hönow](https://www.google.com/)
 Supported by Cultural Office Stuttgart
 
-Related Projects
+###### Related Projects
 [Earthroom 2022](https://anima-ona.netlify.app/work/2023-06-27-liquid-sandstone-stool/)
