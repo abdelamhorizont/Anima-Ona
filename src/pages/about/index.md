@@ -11,7 +11,7 @@ anima ona ist ein multidisziplinäres Studio, bestehend aus Freia Achenbach und 
 
   10. – 21.05.23
   Zwei plus x, Trüffelsuche, Gruppenausstellung, Projektraum Kunst Klima 
-  Stuttgart, GER
+  *Stuttgart, GER*
 
   07.06. – 15.07.23
   Forma Gallery, Gruppenausstellung 
@@ -28,7 +28,7 @@ anima ona ist ein multidisziplinäres Studio, bestehend aus Freia Achenbach und 
 * Exhibitions, Talks, Awards and Scholarships
 
   2023	Atelierstipendium, Künstlerhaus Stuttgart 
-               Stuttgart, GER
+               *Stuttgart, GER*
   2023	Artist-in-Residence für klimasensible Land Art\
                Ausstellung auf Schloss & Gut Liebenberg 		
                Liebenberg, GER
