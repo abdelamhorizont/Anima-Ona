@@ -12,6 +12,14 @@
 
     background-color: white;
 
+    h6{
+        margin: 1.5rem;
+        font-size: 1rem;
+        margin-top: -17vh;
+        margin-bottom: 15vh;
+
+    }
+
     ul{
         display: grid;
         grid-auto-flow: column;
@@ -23,14 +31,24 @@
         margin-bottom: 15vh;
         margin-top: 15vh;
 
-    }
-
-    li{        
-        img{
-            width: 100%;
-            object-fit: contain;
+        li{        
+            // width: 10%;
+    
+            img{
+                width: 100%;
+                object-fit: contain;
+            }
+    
+            h6{
+                margin: 1.5rem;
+                font-size: 1rem;
+                margin-top: -13vh;
+                margin-bottom: 15vh;
+        
+            }
         }
     }
+
 
     
     p { 
