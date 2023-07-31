@@ -11,5 +11,23 @@ Mo 17. Juli
 
 nicht möglich:
 - Projektliste keine umbrüche nach jahr
+- fixed menu open? titel?
 - workseiten Raster, bild über zweidrittel nicht möglich 
 - about seite seperat
+- slides
+
+to do: 
+x landing video on scroll
+? schrift
+x menu
+- slider
+- pages: contact, imprint etc
+- mobile check
+- projectlist img view work-post
+
+FEEDBACK:
+- listenelemente, nach einander
+- jahreszahl näher dran bei umbruch
+- tag liste onscroll auftaucht
+- body für mobile, body für website
+- bildergruppen

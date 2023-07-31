@@ -1,13 +1,21 @@
 .projectlist {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 1.4rem;
-    width: 100%;
+    width: calc(100vw - 3rem);
+    // height: 100%;
 
     position: absolute;
+    // overflow: hidden;
+
+    // display: flex;
+    // flex-wrap: wrap;
+    // align-items: flex-start;
 
     li {
+        height: 3rem;
         margin-bottom: 2rem;
         overflow: hidden;
+        // height:max-content;
 
         a {
             display: flex;
@@ -16,21 +24,30 @@
             h3 {
                 font-size: 0.7rem;
             }
+    
+            h1 {
+                font-size: 1.7rem;
+            }
 
             h1,
             h3 {
                 color: white;
                 mix-blend-mode: difference;
             }
+
+            max-height:40px;
         }
 
         .image-contaner {
             mix-blend-mode: normal;
 
-            object-fit: contain;
             position: absolute;
-            top: 0;
-            height: 100vh;
+            z-index: 10;
+            // margin-top: -10vh;
+            top: -16vh;
+            height: 105vh;
+            width: 50vw;
+            object-fit: contain;
 
             display: flex;
             justify-content: center;
@@ -53,6 +70,43 @@
             color: white;
         }
     }
+
+    .inactiveTag {
+        color: transparent;
+        opacity: 0.3;
+        text-shadow: rgb(255, 255, 255) 0px 0 5px;
+        mix-blend-mode: difference;
+    
+        // text-shadow: rgb(0, 0, 0) 0px 0 3px;
+        transition: all 0.5s ease;
+        z-index: 0;
+        
+        h1,
+        h3 {
+            color: transparent;
+            // opacity: 0.6;
+            z-index: 0;
+        }
+    
+        .image-contaner {
+            // filter: blur(10px);
+            opacity: 0;
+            mix-blend-mode: normal;
+            z-index: 10;
+        }
+    
+        * {
+            color: transparent;
+            // mix-blend-mode: difference;
+        }
+    }
+
+    .inactiveTag:hover{
+        color: transparent;
+        opacity: 1;
+        text-shadow: rgb(255, 255, 255) 0px 0 0px;
+        mix-blend-mode: difference;
+    } 
 }
 
 .tags {
@@ -63,7 +117,7 @@
     // gap: 1rem;
 
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 1.4rem;
+    font-size: 1.7rem;
     transition: all 0.5s ease;
 
     * {
@@ -74,31 +128,33 @@
 
 .inactiveTag {
     color: transparent;
-    opacity: 0.6;
-    text-shadow: rgb(255, 255, 255) 0px 0 3px;
+    opacity: 0.3;
+    text-shadow: rgb(255, 255, 255) 0px 0 5px;
     mix-blend-mode: difference;
 
     // text-shadow: rgb(0, 0, 0) 0px 0 3px;
     transition: all 0.5s ease;
     z-index: 0;
-    
-    h1,
-    h3 {
-        color: transparent;
-        opacity: 0.6;
-        z-index: 0;
+
+    img{
+        opacity: 0;
     }
 
     .image-contaner {
+
         filter: blur(10px);
+        mix-blend-mode: normal;
         z-index: 10;
     }
-
-    * {
-        color: transparent;
-        mix-blend-mode: difference;
-    }
 }
+
+.inactiveTag:hover{
+    color: transparent;
+    opacity: 1;
+    text-shadow: rgb(255, 255, 255) 0px 0 0px;
+    mix-blend-mode: difference;
+} 
+
 
 .hidden-tag{
     opacity: 0;
@@ -112,12 +168,21 @@
 
         li {
             width: 50%;
+            margin-bottom: 0rem;
 
             a {
                 width: fit-content;
+
+                h1{
+                    font-size: 1.3rem;
+                }
             }
         }
 
+    }
+
+    .tags {
+        font-size: 1.4rem;
     }
 
 }

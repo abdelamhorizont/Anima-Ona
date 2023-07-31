@@ -1,14 +1,14 @@
 .layout {
     // z-index: 100;
     width: calc(100vw - 3rem);
-    // height: 100%;
+    // height: calc(100vh - 13rem);
     padding: 1.5rem;
     overflow: hidden;
 
     font-family: 'Magister';
 
     .nav-bar {
-        position: fixed;
+        // position: fixed;
         width: calc(100vw - 3rem);
     }
 
@@ -20,22 +20,23 @@
 
         mix-blend-mode: difference;
 
-        h1,h2 {
+        h1,
+        h2 {
             color: white;
         }
-        
+
         .contact {
             width: 75vw;
             display: flex;
             flex-wrap: wrap;
             gap: 0rem 2rem;
         }
-        
+
         .nav-links {
             display: flex;
             gap: 0rem 2rem;
         }
-        
+
         .nav-links-footer {
             // width: 25vw;
             display: flex;
@@ -47,11 +48,11 @@
             // gap: 2rem;
         }
 
-        .mail{
-            margin-left: 4rem;
+        .mail {
+            margin-left: 0rem;
         }
-        
-        a{
+
+        a {
             color: white;
         }
     }
@@ -63,8 +64,21 @@
 
 @media screen and (min-width: 720px) {
 
-    .logo{
+    .logo {
         display: flex;
         gap: 4rem;
+    }
+
+    .nav-bar-fill-space {
+        height: 0vh;
+    }
+
+    .nav-bar,
+    .footer {
+        .contact{
+            .mail {
+                margin-left: 4rem;
+            }
+        }
     }
 }

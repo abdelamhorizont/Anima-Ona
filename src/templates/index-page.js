@@ -1,7 +1,7 @@
 import React from "react";
 import { Link, graphql } from "gatsby";
 import { getImage, GatsbyImage } from "gatsby-plugin-image";
-import { motion, AnimatePresence } from "framer-motion"
+import { motion, useScroll, useTransform, useSpring, AnimatePresence } from "framer-motion"
 
 import Layout from "../components/layout/Layout";
 import Projectlist from "../components/projectlist/projectlist";
@@ -17,22 +17,38 @@ const IndexPage = ({ data }) => {
   const { frontmatter } = data.markdownRemark
   const image = getImage(frontmatter.image)
 
+  const { scrollYProgress } = useScroll();
+  const scaleX = useSpring(scrollYProgress)
+
+  const scrollOpacity = useTransform(
+    useSpring(scrollYProgress),
+    [0, 1],
+    [1, 0]
+  )
+  const scrollBlur = useTransform(
+    scrollYProgress,
+    [0, 1],
+    ['blur(0px)', 'blur(10px)']
+  )
+  // console.log(scrollYProgress);
+
   return (
-    <Layout>
+    <>
       <motion.div
         className="landing-anim"
-        initial={{ 
-          opacity: 1, 
-          filter: 'blur(0px)'
-        }}
-        animate={{
-          opacity: 0, 
-          filter: 'blur(10px)',
-          transitionEnd: {
-            display: "none",
-          },
-        }}
-        transition={{ duration: 1.5, delay: 1 }}
+        // initial={{ 
+        //   opacity: 1, 
+        //   filter: 'blur(0px)'
+        // }}
+        // animate={{
+        //   opacity: 0, 
+        //   filter: 'blur(10px)',
+        //   transitionEnd: {
+        //     display: "none",
+        //   },
+        // }}
+        // transition={{ duration: 1.5, delay: 1 }}
+        style={{ opacity: scrollOpacity, filter: scrollBlur }}
       >
         <GatsbyImage
           image={image}
@@ -47,15 +63,15 @@ const IndexPage = ({ data }) => {
         </div>
       </motion.div>
 
-      {/* tags */}
-      {/* <Tags /> */}
-
-      {/* projectlist */}
-      {/* <Projectlist /> */}
       <div className="empty-page-fill"> </div>
+      <motion.div>
+        <Layout>
+          <div className="empty-page-fill"> </div>
 
-      {/* cookies */}
-    </Layout>
+          {/* cookies */}
+        </Layout>
+      </motion.div>
+    </>
   )
 }
 

@@ -3,11 +3,13 @@ import PropTypes from "prop-types";
 import { kebabCase } from "lodash";
 import { Helmet } from "react-helmet";
 import { graphql, Link } from "gatsby";
+
 import Layout from "../components/layout/Layout";
 import Content, { HTMLContent } from "../components/content/content";
+import Projectlist from "../components/projectlist/projectlist";
 
 // eslint-disable-next-line
-import '../styles/work-post.scss'
+// import '../styles/work-post.scss'
 
 const BlogPost = ({ data }) => {
   const { markdownRemark: post } = data;
@@ -15,7 +17,10 @@ const BlogPost = ({ data }) => {
 
   return (
     <Layout workpost={true} hiddenTag={hiddenTag}>
+      
       <HTMLContent content={post.html} />
+      <Projectlist />
+      <div className="empty-page-fill"> </div>
     </Layout>
   )
 }

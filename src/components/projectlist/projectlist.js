@@ -13,7 +13,10 @@ function randomNumber(min, max) { // min and max included
 export default function Projectlist({ workpost, hiddenTag }) {
   const data = useStaticQuery(graphql`
 query {
-  allMarkdownRemark(filter: {frontmatter: {templateKey: {eq: "work-post"}}}) {
+  allMarkdownRemark(
+    filter: {frontmatter: {templateKey: {eq: "work-post"}}}
+    sort: {fields: frontmatter___date, order: DESC}
+    ) {
     edges {
       node {
         fields {
@@ -37,11 +40,10 @@ query {
   const tags = ["All", "Object", "Space", "Research", "Exhibition"]
   const projectlist = data.allMarkdownRemark.edges
 
-  useEffect(() => {
-    settagChange(true)
-  }, [activeTag])
+  // useEffect(() => {
+  //   settagChange(true)
+  // }, [activeTag])
   
-
 
   return (
     <>
@@ -51,7 +53,14 @@ query {
             return (
               <button
                 className={tag != activeTag && 'inactiveTag'}
-                onClick={() => setactiveTag(tag)}
+                onClick={() => {
+                  setactiveTag(tag)
+                  settagChange(true)
+                }}
+                onMouseEnter={() => {
+                  setactiveTag(tag)
+                  settagChange(true)
+                }} 
               >{tag}</button>
             )
           })
@@ -62,7 +71,7 @@ query {
         {
           projectlist.map((project, i) => {
             return (
-              <Project project={project} activeTag={activeTag} workpost={workpost} hiddenTag={hiddenTag} />
+              <Project project={project} activeTag={activeTag} workpost={!tagChange && workpost} hiddenTag={hiddenTag} />
             )
           })
         }

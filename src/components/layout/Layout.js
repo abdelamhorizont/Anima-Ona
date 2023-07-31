@@ -26,7 +26,7 @@ const Layout = ({ children, workpost, hiddenTag }) => {
         />
       </Helmet>
 
-      <div className="nav-bar">
+      <div className="nav-bar" style={{position: workpost && 'fixed'}}>
         <div className="logo">
           <Link to="/" className="title"><h1>anima ona</h1></Link>
           <div className="subtitle"><h2>studio for research, art and design</h2></div>
@@ -37,7 +37,10 @@ const Layout = ({ children, workpost, hiddenTag }) => {
         </div>
       </div>
 
-      <div className="nav-bar-fill-space"></div>
+    {
+      workpost && <div className="nav-bar-fill-space"></div>
+
+    }
 
       <Projectlist workpost={workpost} hiddenTag={hiddenTag} />
 
@@ -47,7 +50,7 @@ const Layout = ({ children, workpost, hiddenTag }) => {
       <div className="contact">
         <div className="title"><h1>anima ona</h1></div>
         <div className="adress"><h2>Strohberg 20, 70180 Stuttgart</h2></div>
-        
+
         <div className="mail"><a href="mailto:animaona@gmail.com">animaona@gmail.com</a></div>
         <div className="insta-link"><a href='https://www.instagram.com/animaona/?hl=en' target="blank">Instagram</a></div>
       </div>
