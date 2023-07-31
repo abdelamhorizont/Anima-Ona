@@ -19,7 +19,7 @@ export default function Project({ project, activeTag, workpost, hiddenTag }) {
     // const hiddenTag = "Liquid Sandstone Stool"
 
     return (
-        <motion.div>
+        <>
             <li className={workpost ? (hiddenTag != project.node.frontmatter.title && 'hidden-tag') 
             : (activeTag != 'All' && (!project.node.frontmatter.tags.includes(activeTag) && 'inactiveTag'))}>
                 <Link
@@ -45,6 +45,6 @@ export default function Project({ project, activeTag, workpost, hiddenTag }) {
                 }
             </li>
 
-        </motion.div>
+        </>
     )
 }
