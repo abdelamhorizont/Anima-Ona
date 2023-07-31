@@ -26,8 +26,16 @@ x menu
 - projectlist img view work-post
 
 FEEDBACK:
-- listenelemente, nach einander
-- jahreszahl näher dran bei umbruch
-- tag liste onscroll auftaucht
-- body für mobile, body für website
-- bildergruppen
+- jahreszahl näher dran bei umbruch (mobile)
+
+- Projekttitel sollen versetzt erscheinen
+
+- tagliste im Menü verschwindet beim runterscrollen, taucht auf beim hochscrollen
+
+- Menü button zum ein- und ausblenden 
+
+- unterschiedliche Inhalte im backend für desktop und mobile
+
+- verschiedene Rasteroptionen bei aufeinanderfolgenden Bildern 
+
+- Slider

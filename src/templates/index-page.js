@@ -1,7 +1,7 @@
 import React from "react";
 import { Link, graphql } from "gatsby";
 import { getImage, GatsbyImage } from "gatsby-plugin-image";
-import { motion, useScroll, useTransform, useSpring, AnimatePresence } from "framer-motion"
+import { motion, useScroll, useTransform, useSpring } from "framer-motion"
 
 import Layout from "../components/layout/Layout";
 import Projectlist from "../components/projectlist/projectlist";

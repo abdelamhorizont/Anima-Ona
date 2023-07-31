@@ -1,5 +1,6 @@
 import { Link } from '@reach/router';
 import React, { useState } from 'react'
+import { motion, useScroll, useTransform, useSpring, AnimatePresence } from "framer-motion"
 
 function randomNumber(min, max) { // min and max included
     return (
@@ -18,7 +19,7 @@ export default function Project({ project, activeTag, workpost, hiddenTag }) {
     // const hiddenTag = "Liquid Sandstone Stool"
 
     return (
-        <>
+        <motion.div>
             <li className={workpost ? (hiddenTag != project.node.frontmatter.title && 'hidden-tag') 
             : (activeTag != 'All' && (!project.node.frontmatter.tags.includes(activeTag) && 'inactiveTag'))}>
                 <Link
@@ -44,6 +45,6 @@ export default function Project({ project, activeTag, workpost, hiddenTag }) {
                 }
             </li>
 
-        </>
+        </motion.div>
     )
 }
