@@ -32,7 +32,7 @@ FEEDBACK:
 
 - tagliste im Menü verschwindet beim runterscrollen, taucht auf beim hochscrollen
 
-- Menü button zum ein- und ausblenden 
+x Menü button zum ein- und ausblenden 
 
 - unterschiedliche Inhalte im backend für desktop und mobile
 

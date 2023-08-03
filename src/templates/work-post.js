@@ -9,7 +9,7 @@ import Content, { HTMLContent } from "../components/content/content";
 import Projectlist from "../components/projectlist/projectlist";
 
 // eslint-disable-next-line
-// import '../styles/work-post.scss'
+import '../styles/work-post.scss'
 
 const BlogPost = ({ data }) => {
   const { markdownRemark: post } = data;
@@ -17,7 +17,12 @@ const BlogPost = ({ data }) => {
 
   return (
     <Layout workpost={true} hiddenTag={hiddenTag}>
-      
+
+      <div className="work-title">
+        <h1> {post.frontmatter.title}</h1>
+        <h3> {post.frontmatter.date} </h3>
+      </div>
+
       <HTMLContent content={post.html} />
       <Projectlist />
       <div className="empty-page-fill"> </div>
@@ -34,7 +39,7 @@ export const pageQuery = graphql`
       id
       html
       frontmatter {
-        date(formatString: "MMMM DD, YYYY")
+        date(formatString: "YYYY")
         title
         description
         featuredimage

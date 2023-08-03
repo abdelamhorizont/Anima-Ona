@@ -1,74 +1,130 @@
-.projectlist {
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 1.4rem;
-    width: calc(100vw - 3rem);
-    // height: 100%;
+.menu {
+    overflow: hidden;
 
-    position: absolute;
-    // overflow: hidden;
+    .projectlist {
 
-    // display: flex;
-    // flex-wrap: wrap;
-    // align-items: flex-start;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 1.4rem;
+        width: calc(100vw - 3rem);
 
-    li {
-        height: 3rem;
-        margin-bottom: 2rem;
         overflow: hidden;
-        // height:max-content;
 
-        a {
-            display: flex;
-            gap: 0rem 1rem;
+        li {
+            height: 3rem;
+            margin-bottom: 2rem;
+            overflow: hidden;
+            // mix-blend-mode: difference;
+            transition: all 0.5s ease;
 
-            h3 {
-                font-size: 0.7rem;
+            a {
+                display: flex;
+                gap: 0rem 1rem;
+
+                h3 {
+                    font-size: 0.7rem;
+                }
+
+                h1 {
+                    font-size: 1.7rem;
+                }
+
+                h1,
+                h3 {
+                    mix-blend-mode: difference;
+                    color: white;
+                }
+
+                max-height:40px;
             }
-    
-            h1 {
-                font-size: 1.7rem;
+
+            .image-contaner {
+                mix-blend-mode:unset;
+
+                position: fixed;
+                z-index: 10;
+                // margin-top: -10vh;
+                top: 0vh;
+                height: 105vh;
+                max-width: 50vw;
+                object-fit: contain;
+
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                pointer-events: none;
+                overflow: hidden;
+
             }
+        }
+
+        a:hover {
+            z-index: 11;
+            color: white;
 
             h1,
             h3 {
+                width: fit-content;
+                z-index: 11;
                 color: white;
-                mix-blend-mode: difference;
             }
-
-            max-height:40px;
         }
 
-        .image-contaner {
-            mix-blend-mode: normal;
+        .inactiveTag {
+            color: transparent;
+            opacity: 0.3;
+            text-shadow: rgb(255, 255, 255) 0px 0 5px;
+            mix-blend-mode: difference;
 
-            position: absolute;
-            z-index: 10;
-            // margin-top: -10vh;
-            top: -16vh;
-            height: 105vh;
-            width: 50vw;
-            object-fit: contain;
+            // text-shadow: rgb(0, 0, 0) 0px 0 3px;
+            transition: all 0.5s ease;
+            z-index: 0;
 
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            h1,
+            h3 {
+                color: transparent;
+                // opacity: 0.6;
+                z-index: 0;
+            }
 
-            pointer-events: none;
-            overflow: hidden;
+            .image-contaner {
+                // filter: blur(10px);
+                opacity: 0;
+                mix-blend-mode: normal;
+                z-index: 10;
+            }
 
+            * {
+                color: transparent;
+                // mix-blend-mode: difference;
+            }
+        }
+
+        .inactiveTag:hover {
+            color: transparent;
+            opacity: 1;
+            text-shadow: rgb(255, 255, 255) 0px 0 0px;
+            mix-blend-mode: difference;
         }
     }
 
-    a:hover {
-        z-index: 11;
-        color: white;
+    .tags {
+        display: flex;
+        width: calc(100vw - 3rem);
+        justify-content: space-between;
+        margin: 2rem 0rem;
+        // gap: 1rem;
 
-        h1,
-        h3 {
-            width: fit-content;
-            z-index: 11;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 1.7rem;
+        transition: all 0.5s ease;
+
+        mix-blend-mode: difference;
+
+        * {
             color: white;
         }
+
     }
 
     .inactiveTag {
@@ -76,113 +132,62 @@
         opacity: 0.3;
         text-shadow: rgb(255, 255, 255) 0px 0 5px;
         mix-blend-mode: difference;
-    
+
         // text-shadow: rgb(0, 0, 0) 0px 0 3px;
         transition: all 0.5s ease;
         z-index: 0;
-        
-        h1,
-        h3 {
-            color: transparent;
-            // opacity: 0.6;
-            z-index: 0;
-        }
-    
-        .image-contaner {
-            // filter: blur(10px);
+
+        img {
             opacity: 0;
+        }
+
+        .image-contaner {
+
+            filter: blur(10px);
             mix-blend-mode: normal;
             z-index: 10;
         }
-    
-        * {
-            color: transparent;
-            // mix-blend-mode: difference;
-        }
     }
 
-    .inactiveTag:hover{
+    .inactiveTag:hover {
         color: transparent;
         opacity: 1;
         text-shadow: rgb(255, 255, 255) 0px 0 0px;
         mix-blend-mode: difference;
-    } 
-}
-
-.tags {
-    display: flex;
-    width: 100%;
-    justify-content: space-between;
-    margin: 2rem 0rem;
-    // gap: 1rem;
-
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 1.7rem;
-    transition: all 0.5s ease;
-
-    * {
-        color: white;
-        mix-blend-mode: difference;
     }
-}
 
-.inactiveTag {
-    color: transparent;
-    opacity: 0.3;
-    text-shadow: rgb(255, 255, 255) 0px 0 5px;
-    mix-blend-mode: difference;
 
-    // text-shadow: rgb(0, 0, 0) 0px 0 3px;
-    transition: all 0.5s ease;
-    z-index: 0;
-
-    img{
+    .hidden-tag {
         opacity: 0;
     }
-
-    .image-contaner {
-
-        filter: blur(10px);
-        mix-blend-mode: normal;
-        z-index: 10;
-    }
-}
-
-.inactiveTag:hover{
-    color: transparent;
-    opacity: 1;
-    text-shadow: rgb(255, 255, 255) 0px 0 0px;
-    mix-blend-mode: difference;
-} 
-
-
-.hidden-tag{
-    opacity: 0;
 }
 
 @media screen and (min-width: 720px) {
-    .projectlist {
-        display: flex;
-        flex-wrap: wrap;
+
+    .menu {
+        .projectlist {
+            display: flex;
+            flex-wrap: wrap;
 
 
-        li {
-            width: 50%;
-            margin-bottom: 0rem;
+            li {
+                width: 50%;
+                margin-bottom: 0rem;
 
-            a {
-                width: fit-content;
+                a {
+                    width: fit-content;
 
-                h1{
-                    font-size: 1.3rem;
+                    h1 {
+                        font-size: 1.3rem;
+                    }
                 }
             }
+
         }
 
-    }
-
-    .tags {
-        font-size: 1.4rem;
+        .tags {
+            font-size: 1.4rem;
+        }
     }
 
 }

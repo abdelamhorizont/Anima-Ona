@@ -1,27 +1,34 @@
 .layout {
-    // z-index: 100;
-    width: calc(100vw - 3rem);
-    // height: calc(100vh - 13rem);
-    padding: 1.5rem;
+    width: calc(100vw - 0rem);
     overflow: hidden;
 
     font-family: 'Magister';
 
-    .nav-bar {
-        // position: fixed;
+    .nav{
         width: calc(100vw - 3rem);
+        padding: 1.5rem;
+        transition: all 0.5s ease;
+        z-index: 10;
+
+        // backdrop-filter: blur(10px);
+        // max-height: max-content;
+        // height: 100%;
+        // mix-blend-mode: difference;
     }
 
+    .nav-bar{
+        backdrop-filter: blur(10px);
+        mix-blend-mode: difference;
+    }
+    
     .nav-bar,
     .footer {
-        // width: 100%;
         display: flex;
         justify-content: space-between;
-
-        mix-blend-mode: difference;
-
+        
+        
         h1,
-        h2 {
+        h2, a, .menu-button, button {
             color: white;
         }
 
@@ -50,10 +57,6 @@
 
         .mail {
             margin-left: 0rem;
-        }
-
-        a {
-            color: white;
         }
     }
 

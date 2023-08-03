@@ -1,5 +1,5 @@
 import { Link } from '@reach/router';
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { motion, useScroll, useTransform, useSpring, AnimatePresence } from "framer-motion"
 
 function randomNumber(min, max) { // min and max included
@@ -8,20 +8,34 @@ function randomNumber(min, max) { // min and max included
     )
 }
 
-export default function Project({ project, activeTag, workpost, hiddenTag }) {
+export default function Project({ menuOpen, project, index, activeTag, workpost, hiddenTag }) {
     const isBrowser = () => typeof window !== "undefined"
     const mobile = isBrowser() && window.screen.width < 720
-
 
     const marginTitle = React.useMemo(() => randomNumber(0, 30), [])
     const [imageShown, setImageShown] = useState(false);
 
-    // const hiddenTag = "Liquid Sandstone Stool"
+
+    const { scrollYProgress } = useScroll();
+    const scrollLazy = useTransform(
+        useSpring(scrollYProgress),
+        [0, 1],
+        [1, 5]
+    )
+
+    const projectStyle ={
+        opacity: menuOpen? 1 : 0,
+        // marginTop: !workpost && scrollLazy + 'vh'
+    } 
 
     return (
         <>
-            <li className={workpost ? (hiddenTag != project.node.frontmatter.title && 'hidden-tag') 
-            : (activeTag != 'All' && (!project.node.frontmatter.tags.includes(activeTag) && 'inactiveTag'))}>
+            <motion.li
+                style={projectStyle}
+                // style={{ marginTop: !workpost && 5 + 'vh' }}
+                className={workpost && !menuOpen ? (hiddenTag != project.node.frontmatter.title && 'hidden-tag')
+                    : (activeTag != 'All' && (!project.node.frontmatter.tags.includes(activeTag) && 'inactiveTag'))}>
+                
                 <Link
                     to={project.node.fields.slug}
                     onMouseEnter={() => setImageShown(true)}
@@ -43,7 +57,7 @@ export default function Project({ project, activeTag, workpost, hiddenTag }) {
                         <img src={"" + project.node.frontmatter.featuredimage} alt="" />
                     </div>
                 }
-            </li>
+            </motion.li>
 
         </>
     )

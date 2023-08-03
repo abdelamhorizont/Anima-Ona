@@ -10,7 +10,7 @@ function randomNumber(min, max) { // min and max included
   )
 }
 
-export default function Projectlist({ workpost, hiddenTag }) {
+export default function Projectlist({ menuOpen, workpost, hiddenTag, scrollLazy }) {
   const data = useStaticQuery(graphql`
 query {
   allMarkdownRemark(
@@ -40,14 +40,9 @@ query {
   const tags = ["All", "Object", "Space", "Research", "Exhibition"]
   const projectlist = data.allMarkdownRemark.edges
 
-  // useEffect(() => {
-  //   settagChange(true)
-  // }, [activeTag])
-  
-
   return (
-    <>
-      <div className='tags'>
+    <div className='menu'>
+      <div className='tags' style={{ opacity: menuOpen? 1 : 0}}>
         {
           tags.map(tag => {
             return (
@@ -57,10 +52,10 @@ query {
                   setactiveTag(tag)
                   settagChange(true)
                 }}
-                onMouseEnter={() => {
-                  setactiveTag(tag)
-                  settagChange(true)
-                }} 
+                // onMouseEnter={() => {
+                //   setactiveTag(tag)
+                //   settagChange(true)
+                // }}
               >{tag}</button>
             )
           })
@@ -71,11 +66,19 @@ query {
         {
           projectlist.map((project, i) => {
             return (
-              <Project project={project} activeTag={activeTag} workpost={!tagChange && workpost} hiddenTag={hiddenTag} />
+              <Project
+                menuOpen={menuOpen}
+                project={project}
+                index={i}
+                activeTag={activeTag}
+                workpost={!tagChange && workpost}
+                hiddenTag={hiddenTag} 
+                scrollLazy={scrollLazy}
+              />
             )
           })
         }
       </ul>
-    </>
+    </div>
   )
 }

@@ -1,9 +1,9 @@
 .html-content {
     // position: absolute;
-    z-index: -1;
+    z-index: -2;
     top: 0;
     left: 0;
-    margin: -1.5rem;
+    // margin: -1.5rem;
     margin-top: -21rem;
     margin-bottom: 15vh;
 
@@ -120,6 +120,8 @@
 
             img {
                 margin-top: 15vh;
+                width: 100vw;
+
             }
         }
 

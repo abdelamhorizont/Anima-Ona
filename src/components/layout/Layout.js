@@ -1,4 +1,4 @@
-import * as React from "react";
+import React, { useState } from "react";
 import { Helmet } from "react-helmet";
 
 import useSiteMetadata from "../SiteMetadata";
@@ -8,8 +8,16 @@ import Projectlist from "../projectlist/projectlist";
 
 import './layout.scss'
 
-const Layout = ({ children, workpost, hiddenTag }) => {
+const Layout = ({ children, workpost, hiddenTag, scrollLazy }) => {
   const { title, description } = useSiteMetadata();
+  const [menuOpen, setMenuOpen] = useState(!workpost)
+
+  const navStyle = {
+    position: 'fixed',
+    mixBlendMode: 'difference',
+    backdropFilter: menuOpen && 'blur(10px)'
+  }
+
   return (
     <div className="layout">
       <Helmet>
@@ -26,7 +34,8 @@ const Layout = ({ children, workpost, hiddenTag }) => {
         />
       </Helmet>
 
-      <div className="nav-bar" style={{position: workpost && 'fixed'}}>
+    <div className="nav" style={workpost && navStyle}>
+      <div className="nav-bar" >
         <div className="logo">
           <Link to="/" className="title"><h1>anima ona</h1></Link>
           <div className="subtitle"><h2>studio for research, art and design</h2></div>
@@ -34,31 +43,35 @@ const Layout = ({ children, workpost, hiddenTag }) => {
         <div className="nav-links">
           <Link to="/contact">Contact</Link>
           <Link to="/about">About</Link>
+          <div className="menu-button">
+            <button style={{display: menuOpen && 'none'}} onClick={() => setMenuOpen(true)}>Menu</button>
+            <button style={{display: !menuOpen && 'none'}} onClick={() => setMenuOpen(false)}>X</button>
+          </div>
         </div>
       </div>
 
-    {
-      workpost && <div className="nav-bar-fill-space"></div>
+      {
+        // workpost && <div className="nav-bar-fill-space"></div>
+      }
 
-    }
-
-      <Projectlist workpost={workpost} hiddenTag={hiddenTag} />
+      <Projectlist menuOpen={menuOpen} workpost={workpost} hiddenTag={hiddenTag} scrollLazy={scrollLazy} />
+    </div>
 
       <div>{children}</div>
 
-    <div className="footer">
-      <div className="contact">
-        <div className="title"><h1>anima ona</h1></div>
-        <div className="adress"><h2>Strohberg 20, 70180 Stuttgart</h2></div>
+      <div className="footer">
+        <div className="contact">
+          <div className="title"><h1>anima ona</h1></div>
+          <div className="adress"><h2>Strohberg 20, 70180 Stuttgart</h2></div>
 
-        <div className="mail"><a href="mailto:animaona@gmail.com">animaona@gmail.com</a></div>
-        <div className="insta-link"><a href='https://www.instagram.com/animaona/?hl=en' target="blank">Instagram</a></div>
+          <div className="mail"><a href="mailto:animaona@gmail.com">animaona@gmail.com</a></div>
+          <div className="insta-link"><a href='https://www.instagram.com/animaona/?hl=en' target="blank">Instagram</a></div>
+        </div>
+        <div className="nav-links-footer">
+          <Link to="/imprint">Imprint</Link>
+          <Link to="/privacy-policy">Privacy Policy</Link>
+        </div>
       </div>
-      <div className="nav-links-footer">
-        <Link to="/imprint">Imprint</Link>
-        <Link to="/privacy-policy">Privacy Policy</Link>
-      </div>
-    </div>
 
 
     </div>
