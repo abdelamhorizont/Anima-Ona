@@ -10,7 +10,7 @@ content:
       ![liquid sand stool, 2018](/img/dscf0001_1.jpeg "liquid sand stool, 2018")
 
       ###### Ausstelungsansicht 2022
-  - columns: "6"
+  - columns: "2"
     body: >-
       Over a period of two years (2019-2022), we investigated the major
       construction site »Stuttgart 21« in an artistic-experimental way. The
@@ -61,7 +61,7 @@ content:
       ![](/img/dscf0037_1.jpeg)
 
       ###### Ausstelungsansicht 2022
-  - columns: "6"
+  - columns: "2"
     body: Over a period of two years (2019-2022), we investigated the major
       construction site »Stuttgart 21« in an artistic-experimental way. The
       construction site was reinterpreted as an archaeological site. In the
@@ -75,7 +75,7 @@ content:
       ![](/img/besucherinnen_brāhha_00904_1.jpeg)
 
       ###### Ausstelungsansicht 2022
-  - columns: "6"
+  - columns: "2"
     body: >-
       Notes, References and External Links
 
