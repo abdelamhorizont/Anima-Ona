@@ -56,11 +56,7 @@ content:
 
       ![](/img/dscf0034_1.jpeg)
 
-      ###### Ausstelungsansicht 2022
-
       ![](/img/dscf0037_1.jpeg)
-
-      ###### Ausstelungsansicht 2022
   - columns: "2"
     body: Over a period of two years (2019-2022), we investigated the major
       construction site »Stuttgart 21« in an artistic-experimental way. The
