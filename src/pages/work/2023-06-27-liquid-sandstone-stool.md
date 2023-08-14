@@ -59,6 +59,8 @@ content:
       ![](/img/dscf0037_1.jpeg)
 
       t﻿est
+
+      t﻿est
   - columns: "2"
     body: Over a period of two years (2019-2022), we investigated the major
       construction site »Stuttgart 21« in an artistic-experimental way. The
