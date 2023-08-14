@@ -13,6 +13,7 @@ description: >
   new value. 
 featuredpost: true
 featuredimage: img/dscf0001_1.jpeg
+
 tags:
   - Exhibition
   - Space

@@ -15,6 +15,8 @@ const BlogPost = ({ data }) => {
   const { markdownRemark: post } = data;
   const [hiddenTag, setHiddenTag] = useState(post.frontmatter.title)
 
+  console.log(post.frontmatter.content)
+
   return (
     <Layout workpost={true} hiddenTag={hiddenTag}>
 
@@ -23,7 +25,14 @@ const BlogPost = ({ data }) => {
         <h3> {post.frontmatter.date} </h3>
       </div>
 
-      <HTMLContent content={post.html} />
+    {
+      post.frontmatter.content.map(content => {
+        return(
+          <Content content={content.body} columns={content.columns} />
+        )
+      })
+    }
+      {/* <HTMLContent content={post.html} /> */}
       <Projectlist />
       <div className="empty-page-fill"> </div>
     </Layout>
@@ -43,6 +52,10 @@ export const pageQuery = graphql`
         title
         description
         featuredimage
+        content {
+          body
+          columns
+        }
       }
     }
   }

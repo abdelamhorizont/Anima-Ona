@@ -17,13 +17,16 @@ nicht möglich:
 - slides
 
 to do: 
-x landing video on scroll
+- landing video 
 ? schrift
-x menu
+- menu display
 - slider
 - pages: contact, imprint etc
 - mobile check
 - projectlist img view work-post
+- projectlist ende der seite
+
+
 
 FEEDBACK:
 - jahreszahl näher dran bei umbruch (mobile)
@@ -36,6 +39,6 @@ x Menü button zum ein- und ausblenden
 
 - unterschiedliche Inhalte im backend für desktop und mobile
 
-- verschiedene Rasteroptionen bei aufeinanderfolgenden Bildern 
+x verschiedene Rasteroptionen bei aufeinanderfolgenden Bildern 
 
 - Slider

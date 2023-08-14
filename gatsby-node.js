@@ -18,6 +18,10 @@ exports.createPages = ({ actions, graphql }) => {
             frontmatter {
               templateKey
               tags
+              content {
+                body
+                columns
+              }
             }
           }
         }

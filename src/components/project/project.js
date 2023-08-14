@@ -19,13 +19,13 @@ export default function Project({ menuOpen, project, index, activeTag, workpost,
     const { scrollYProgress } = useScroll();
     const scrollLazy = useTransform(
         useSpring(scrollYProgress),
-        [0, 1],
+        [0.0, 1.0],
         [1, 5]
     )
 
     const projectStyle ={
-        opacity: menuOpen? 1 : 0,
-        // marginTop: !workpost && scrollLazy + 'vh'
+        opacity: menuOpen? 1.0 : 0.0,
+        marginTop: !workpost && scrollLazy + 'vh'
     } 
 
     return (
