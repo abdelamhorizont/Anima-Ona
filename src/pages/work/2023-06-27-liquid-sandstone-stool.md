@@ -41,7 +41,7 @@ variable-content:
   - type: image-section
     columns: "3"
     images:
-      - /img/2019_10_r1-04880-027a_1.jpeg
+      - null
       - /img/dscf0034_1.jpeg
       - /img/dscf0037_1.jpeg
   - type: text-section
