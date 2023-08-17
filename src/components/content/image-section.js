@@ -51,7 +51,6 @@ const ImageSection = ({ content, columns }) => {
 
 
   const gridclass = 'col-' + columns
-//dd
   return (
     <div>
       <div className={`html-content ${gridclass}`}>
