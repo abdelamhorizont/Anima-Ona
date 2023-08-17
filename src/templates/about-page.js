@@ -4,7 +4,7 @@ import { getImage, GatsbyImage } from "gatsby-plugin-image";
 import { motion, AnimatePresence } from "framer-motion"
 
 import Layout from "../components/layout/Layout";
-import Content, { HTMLContent } from "../components/content/content";
+import { HTMLContent } from "../components/content/text-section";
 
 // import Tags from "../components/tags/tags";
 
@@ -19,7 +19,7 @@ const AboutPage = ({ data }) => {
 
   return (
     <Layout workpost={true} >
-      <HTMLContent content={html} />
+      {/* <HTMLContent content={html} /> */}
     </Layout>
   )
 }

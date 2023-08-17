@@ -1,5 +1,7 @@
 import * as React from "react";
 import { useState, useEffect, useRef } from "react";
+import { GatsbyImage, getImage } from "gatsby-plugin-image"
+
 import PropTypes from "prop-types";
 import ReactMarkdown from 'react-markdown'
 import parse, { domToReact, attributesToProps } from 'html-react-parser';
@@ -12,9 +14,6 @@ import 'swiper/css'
 // import 'swiper/scss/navigation';
 import 'swiper/scss/pagination';
 
-export const HTMLContent = ({ content }) => (
-  <div className='html-content' dangerouslySetInnerHTML={{ __html: content }} />
-);
 
 const MyImage = props => {
   const [fullSize, setFullSize] = useState(false);
@@ -35,41 +34,52 @@ const MyImage = props => {
   )
 }
 
-const Content = ({ content, columns }) => {
+const ImageSection = ({ content, columns }) => {
   const [imgArray, setimgArray] = useState([])
   const [imgClick, setimgClick] = useState(false)
-  const inlineArray = []
+  // const inlineArray = []
 
-  const componentRef = useRef();
+  // const componentRef = useRef();
 
-  useEffect(() => {
-    setimgArray(inlineArray)
-  }, [inlineArray])
+  // useEffect(() => {
+  //   setimgArray(inlineArray)
+  // }, [inlineArray])
 
-  useEffect(() => {
-    componentRef.current.children[0].onClick = () => setimgClick(true)
-    // console.log(componentRef.current.children[0])
-    // console.log(componentRef.current.children[0]?.children[0])
-  }, [componentRef])
+  // useEffect(() => {
+  //   componentRef.current.children[0].onClick = () => setimgClick(true)
+  // }, [componentRef])
 
 
   const gridclass = 'col-' + columns
 
   return (
     <div>
-      <div ref={componentRef} className={`html-content ${gridclass}`} onClick={() => setimgClick(true)}>
-        <ReactMarkdown
+      <div className={`html-content ${gridclass}`}>
+        {/* <div ref={componentRef} className={`html-content ${gridclass}`} onClick={() => setimgClick(true)}> */}
+
+        {
+          content?.images?.map(image => {
+            const myimage = getImage(image)
+
+            return (
+              <div>
+                <GatsbyImage image={myimage} alt={''} />
+              </div>
+            )
+          })
+        }
+        {/* <ReactMarkdown
           components={{
-            // p:  ({ node, children, ...props }) => {
-            //   console.log(node.children[0].tagName);
-            //   if (node.children[0].tagName === "img") {   
-            //     return(
-            //       <div className="myimages" onClick={() => setimgClick(true)}>{children}</div>
-            //     )
-            //   } else{
-            //     return <p>{children}</p>
-            //   }
-            // }, 
+            p:  ({ node, children, ...props }) => {
+              console.log(node.children[0].tagName);
+              if (node.children[0].tagName === "img") {   
+                return(
+                  <div className="myimages" onClick={() => setimgClick(true)}>{children}</div>
+                )
+              } else{
+                return <p>{children}</p>
+              }
+            }, 
             img: ({ node, ...props }) => {
               inlineArray.push({ node, ...props })
               return (
@@ -78,9 +88,9 @@ const Content = ({ content, columns }) => {
             }
           }}
         >
-          {content}
+          {content} */}
 
-          {/* {
+        {/* {
             parse(content, {
               replace: domNode => {
                 console.log(domNode);
@@ -92,7 +102,7 @@ const Content = ({ content, columns }) => {
               }
             })  
           } */}
-        </ReactMarkdown>
+        {/* </ReactMarkdown> */}
       </div>
 
 
@@ -139,11 +149,4 @@ const Content = ({ content, columns }) => {
   )
 }
 
-Content.propTypes = {
-  content: PropTypes.node,
-  className: PropTypes.string,
-};
-
-HTMLContent.propTypes = Content.propTypes;
-
-export default Content;
+export default ImageSection;

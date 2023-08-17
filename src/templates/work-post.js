@@ -5,7 +5,8 @@ import { Helmet } from "react-helmet";
 import { graphql, Link } from "gatsby";
 
 import Layout from "../components/layout/Layout";
-import Content, { HTMLContent } from "../components/content/content";
+import TextSection, { HTMLContent } from "../components/content/text-section";
+import ImageSection from "../components/content/image-section";
 import Projectlist from "../components/projectlist/projectlist";
 
 // eslint-disable-next-line
@@ -28,11 +29,24 @@ const BlogPost = ({ data }) => {
     {
       post.frontmatter.content.map(content => {
         return(
-          <Content content={content.body} columns={content.columns} />
+          <TextSection content={content.body} columns={content.columns} />
         )
       })
     }
-      {/* <HTMLContent content={post.html} /> */}
+
+    {
+      post.frontmatter.variable_content.map((content) => {
+        if(content.type == 'text-section') {
+          return(
+            <TextSection content={content.text} columns={'2'} />
+            )
+        } else if (content.type == 'image-section') {
+          return(
+            <ImageSection content={content} columns={content.columns} />
+          )
+        }
+      })
+    }
       <Projectlist />
       <div className="empty-page-fill"> </div>
     </Layout>
@@ -55,6 +69,16 @@ export const pageQuery = graphql`
         content {
           body
           columns
+        }
+        variable_content {
+          type
+          columns
+          text
+          images {
+            childImageSharp {
+              gatsbyImageData(layout: FULL_WIDTH)
+            }
+          }
         }
       }
     }
