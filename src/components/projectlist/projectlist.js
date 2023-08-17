@@ -41,7 +41,7 @@ query {
   const projectlist = data.allMarkdownRemark.edges
 
   return (
-    <div className='menu'>
+    <div className='menu' style={{ display: menuOpen? 'block' : 'none'}}>
       <div className='tags' style={{ opacity: menuOpen? 1 : 0}}>
         {
           tags.map(tag => {

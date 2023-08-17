@@ -15,7 +15,7 @@ const BlogPost = ({ data }) => {
   const { markdownRemark: post } = data;
   const [hiddenTag, setHiddenTag] = useState(post.frontmatter.title)
 
-  console.log(post.frontmatter.content)
+  // console.log(post.frontmatter.content)
 
   return (
     <Layout workpost={true} hiddenTag={hiddenTag}>
