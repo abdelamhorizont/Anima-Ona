@@ -41,7 +41,7 @@ variable-content:
   - type: image-section
     columns: "3"
     images:
-      - null
+      - /img/2018-8-26_garten_eden_8.jpeg
       - /img/dscf0034_1.jpeg
       - /img/dscf0037_1.jpeg
   - type: text-section
