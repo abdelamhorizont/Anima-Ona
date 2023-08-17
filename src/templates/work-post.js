@@ -26,13 +26,13 @@ const BlogPost = ({ data }) => {
         <h3> {post.frontmatter.date} </h3>
       </div>
 
-    {
+    {/* {
       post.frontmatter.content.map(content => {
         return(
           <TextSection content={content.body} columns={content.columns} />
         )
       })
-    }
+    } */}
 
     {
       post.frontmatter.variable_content.map((content) => {
