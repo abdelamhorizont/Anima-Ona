@@ -69,11 +69,12 @@ const IndexPage = ({ data }) => {
         </div>
       </motion.div>
 
-      <div className="empty-page-fill" style={{height: '95vh'}}> </div>
+      <div className="empty-page-fill" style={{height: '500px'}}> </div>
+    
       <motion.div>
         <Layout scrollLazy={scrollLazy}>
-          <div className="empty-page-fill" style={{height: '60vh'}}> </div>
           {/* cookies */}
+          <div className="empty-page-fill" style={{height: '49vh'}}> </div>
         </Layout>
       </motion.div>
     </>

@@ -1,3 +1,5 @@
+@import url("//webfonts3.radimpesko.com/RP-W-885abb7b-ce87-49d3-8a21-24592c375f92");
+
 @font-face {
    font-family: "Magister";
    src: url('../assets/fonts/Magister-Regular.woff');
@@ -6,7 +8,11 @@
 
 
 body {
-   font-family: Helvetica, sans-serif;
+   font-family: "Union";
+   font-style:   normal;
+   font-weight:  400;
+   font-stretch: normal;
+   
    line-height: 1.25rem;
    // li:hover{
    //    font-family: "ABCWhyte-Italic";

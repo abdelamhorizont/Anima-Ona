@@ -77,7 +77,15 @@ export const pageQuery = graphql`
           text
           images {
             childImageSharp {
-              gatsbyImageData(layout: FULL_WIDTH)
+              fluid(fit: CONTAIN) {
+                base64
+                tracedSVG
+                srcWebp
+                srcSetWebp
+                originalImg
+                originalName
+              }
+              gatsbyImageData
             }
           }
         }

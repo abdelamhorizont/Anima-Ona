@@ -1,6 +1,6 @@
 import { Link } from '@reach/router';
-import React, { useState, useEffect } from 'react'
-import { motion, useScroll, useTransform, useSpring, AnimatePresence } from "framer-motion"
+import React, { useState, useEffect, useRef } from 'react'
+import { motion, useInView, useScroll, useTransform, useSpring, AnimatePresence } from "framer-motion"
 
 function randomNumber(min, max) { // min and max included
     return (
@@ -15,6 +15,8 @@ export default function Project({ menuOpen, project, index, activeTag, workpost,
     const marginTitle = React.useMemo(() => randomNumber(0, 30), [])
     const [imageShown, setImageShown] = useState(false);
 
+    const ref = useRef(null);
+    const isInView = useInView(ref, { once: true, margin: "0px 0px -500px 0px" });
 
     const { scrollYProgress } = useScroll();
     const scrollLazy = useTransform(
@@ -23,19 +25,23 @@ export default function Project({ menuOpen, project, index, activeTag, workpost,
         [1, 5]
     )
 
-    const projectStyle ={
-        opacity: menuOpen? 1.0 : 0.0,
-        marginTop: !workpost && scrollLazy + 'vh'
-    } 
+    const projectStyle = {
+        // marginTop: isInView ? "none" : "50px",
+        // transform: isInView ? "none" : "translateY(100px)",
+        // transition: "all 0.5s ease 1.5s",
+        opacity: menuOpen ? 1.0 : 0.0,
+        // marginTop: !workpost && scrollLazy + 'vh'
+    }
 
     return (
         <>
             <motion.li
+                ref={ref}
                 style={projectStyle}
                 // style={{ marginTop: !workpost && 5 + 'vh' }}
                 className={workpost && !menuOpen ? (hiddenTag != project.node.frontmatter.title && 'hidden-tag')
                     : (activeTag != 'All' && (!project.node.frontmatter.tags.includes(activeTag) && 'inactiveTag'))}>
-                
+
                 <Link
                     to={project.node.fields.slug}
                     onMouseEnter={() => setImageShown(true)}

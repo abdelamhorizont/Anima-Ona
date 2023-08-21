@@ -10,9 +10,9 @@ import { Swiper, SwiperSlide } from 'swiper/react'
 import { Navigation, Pagination, A11y } from 'swiper';
 
 import './content.scss'
-import 'swiper/css'
+// import 'swiper/css'
 // import 'swiper/scss/navigation';
-import 'swiper/scss/pagination';
+// import 'swiper/scss/pagination';
 
 
 const MyImage = props => {
@@ -35,9 +35,11 @@ const MyImage = props => {
 }
 
 const ImageSection = ({ content, columns }) => {
-  const [imgArray, setimgArray] = useState([])
   const [imgClick, setimgClick] = useState(false)
-  // const inlineArray = []
+
+
+  const navigationPrevRef = React.useRef(null)
+  const navigationNextRef = React.useRef(null)
 
   // const componentRef = useRef();
 
@@ -54,54 +56,19 @@ const ImageSection = ({ content, columns }) => {
   return (
     <div>
       <div className={`html-content ${gridclass}`}>
-        {/* <div ref={componentRef} className={`html-content ${gridclass}`} onClick={() => setimgClick(true)}> */}
 
         {
           content?.images?.map(image => {
             const myimage = getImage(image)
 
             return (
-              <div>
+              <div onClick={() => setimgClick(true)}>
                 <GatsbyImage image={myimage} alt={''} />
               </div>
             )
           })
         }
-        {/* <ReactMarkdown
-          components={{
-            p:  ({ node, children, ...props }) => {
-              console.log(node.children[0].tagName);
-              if (node.children[0].tagName === "img") {   
-                return(
-                  <div className="myimages" onClick={() => setimgClick(true)}>{children}</div>
-                )
-              } else{
-                return <p>{children}</p>
-              }
-            }, 
-            img: ({ node, ...props }) => {
-              inlineArray.push({ node, ...props })
-              return (
-                <MyImage {...props} />
-              )
-            }
-          }}
-        >
-          {content} */}
 
-        {/* {
-            parse(content, {
-              replace: domNode => {
-                console.log(domNode);
-                if (domNode.name?.includes("p")) {
-                  return (
-                    domNode
-                  )
-                }
-              }
-            })  
-          } */}
-        {/* </ReactMarkdown> */}
       </div>
 
 
@@ -109,37 +76,56 @@ const ImageSection = ({ content, columns }) => {
         {/* <div className="background-blur"></div> */}
 
         <Swiper
-          // modules={[Navigation, Pagination, A11y]}
-          // navigation={{
-          //    nextEl: navigationNextRef.current,
-          //    prevEl: navigationPrevRef.current
-          // }}
-          // onBeforeInit={(swiper) => {
-          //    swiper.params.navigation.nextEl = navigationNextRef.current;
-          //    swiper.params.navigation.prevEl = navigationPrevRef.current;
-          // }}
-          loop={true}
+          modules={[Navigation]}
+          navigation={{
+             nextEl: navigationNextRef.current,
+             prevEl: navigationPrevRef.current
+          }}
+          onBeforeInit={(swiper) => {
+             swiper.params.navigation.nextEl = navigationNextRef.current;
+             swiper.params.navigation.prevEl = navigationPrevRef.current;
+          }}
+          loop
           // pagination={{ clickable: true }}
           spaceBetween={0}
           slidesPerView={1}
+          centeredSlides
           className="swiper"
-          style={{
-            // "--swiper-pagination-color": "#fff",
-            // "--swiper-navigation-color": "#fff",
-            // "width": "80%",
-            // "height": "80%",
-            // zIndex: 20,
-            // backdropFilter: 'blur(10px)'
-            // "overflow": "hidden"
-          }}
+          onClick={() => setimgClick(false)}
         >
-          {imgArray.map((node, i) => {
-            return (
-              <SwiperSlide className="swiper-slide">
-                <img src={node.src} alt="" />
-              </SwiperSlide>
-            )
-          })}
+          {
+            content?.images?.map(image => {
+              const myimage = getImage(image)
+              if(image != null){
+                return (
+                  <SwiperSlide className="swiper-slide" >
+                    <div className="slide-img-wrapper">
+                      <GatsbyImage
+                        image={myimage}
+                        imageStyle={{
+                          objectFit: `contain`,
+                          // maxHeight: '80%',
+                          // width: 'auto' 
+                          // height: '100%'
+                        }}
+                        Style={{
+                          objectFit: `contain`,
+                          // maxHeight: '80%',
+                          // height: '80%' 
+                        }}
+                        alt={''}
+                      />
+                    </div>
+                  </SwiperSlide>
+                )
+              }
+            })
+          }
+
+          <div className="swiper-buttons">
+            <div ref={navigationPrevRef} className="swiper-button-prev">  </div>
+            <div ref={navigationNextRef} className="swiper-button-next"> </div>
+          </div>
         </Swiper>
 
       </div>
