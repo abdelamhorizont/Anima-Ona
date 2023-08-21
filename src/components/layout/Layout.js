@@ -28,6 +28,7 @@ const Layout = ({ children, workpost, hiddenTag, scrollLazy }) => {
         <meta property="og:type" content="business.business" />
         <meta property="og:title" content={title} />
         <meta property="og:url" content="/" />
+        <link href="//webfonts3.radimpesko.com/RP-W-885abb7b-ce87-49d3-8a21-24592c375f92" rel="stylesheet" />
         <meta
           property="og:image"
           content={`${withPrefix("/")}img/og-image.jpg`}
