@@ -41,12 +41,12 @@ const ImageSection = ({ content, columns }) => {
 
         {
           content?.images?.map(image => {
-            const myimage = getImage(image)
+            const myimage = getImage(image.image.image)
 
             return (
               <div onClick={() => setimgClick(true)}>
                 <GatsbyImage image={myimage} alt={''} />
-                <p className="caption"></p>
+                <p className="caption">{image.image.caption}</p>
               </div>
             )
           })
