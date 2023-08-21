@@ -12,10 +12,15 @@ const Layout = ({ children, workpost, hiddenTag, scrollLazy }) => {
   const { title, description } = useSiteMetadata();
   const [menuOpen, setMenuOpen] = useState(!workpost)
 
+  const handleMenu = (menu) => {
+    setMenuOpen(menu)
+  }
+
   const navStyle = {
     position: 'fixed',
     mixBlendMode: 'difference',
-    backdropFilter: menuOpen && 'blur(10px)'
+    backdropFilter: menuOpen && 'blur(10px)',
+    height: menuOpen && '95vh',
   }
 
   return (
@@ -35,7 +40,7 @@ const Layout = ({ children, workpost, hiddenTag, scrollLazy }) => {
         />
       </Helmet>
 
-    <div className="nav" style={workpost && navStyle}>
+    <div className="nav" style={workpost && navStyle} onClick={() => setMenuOpen(false)}>
       <div className="nav-bar" >
         <div className="logo">
           <Link to="/" className="title"><h1>anima ona</h1></Link>
@@ -44,10 +49,10 @@ const Layout = ({ children, workpost, hiddenTag, scrollLazy }) => {
         <div className="nav-links">
           <Link to="/contact">Contact</Link>
           <Link to="/about">About</Link>
-          <div className="menu-button">
+          {/* <div className="menu-button">
             <button style={{display: menuOpen && 'none'}} onClick={() => setMenuOpen(true)}>Menu</button>
             <button style={{display: !menuOpen && 'none'}} onClick={() => setMenuOpen(false)}>X</button>
-          </div>
+          </div> */}
         </div>
       </div>
 
@@ -55,7 +60,7 @@ const Layout = ({ children, workpost, hiddenTag, scrollLazy }) => {
         // workpost && <div className="nav-bar-fill-space"></div>
       }
 
-      <Projectlist menuOpen={menuOpen} workpost={workpost} hiddenTag={hiddenTag} scrollLazy={scrollLazy} />
+      <Projectlist handleMenu={handleMenu} menuOpen={menuOpen} workpost={workpost} hiddenTag={hiddenTag} scrollLazy={scrollLazy} />
     </div>
 
       <div>{children}</div>

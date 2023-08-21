@@ -10,7 +10,7 @@ function randomNumber(min, max) { // min and max included
   )
 }
 
-export default function Projectlist({ menuOpen, workpost, hiddenTag, scrollLazy }) {
+export default function Projectlist({handleMenu, menuOpen, workpost, hiddenTag, scrollLazy }) {
   const data = useStaticQuery(graphql`
 query {
   allMarkdownRemark(
@@ -34,6 +34,8 @@ query {
   }
 `)
 
+  // const [menuOpen, setMenuOpen] = useState(!workpost)
+
   const [activeTag, setactiveTag] = useState('All')
   const [tagChange, settagChange] = useState(false)
 
@@ -41,8 +43,8 @@ query {
   const projectlist = data.allMarkdownRemark.edges
 
   return (
-    <div className='menu' style={{ display: menuOpen? 'block' : 'none'}}>
-      <div className='tags' style={{ opacity: menuOpen? 1 : 0}}>
+    <div className='menu'>
+      <div className='tags' style={{ opacity: menuOpen ? 1 : 1 }}>
         {
           tags.map(tag => {
             return (
@@ -51,18 +53,21 @@ query {
                 onClick={() => {
                   setactiveTag(tag)
                   settagChange(true)
+                  handleMenu(true)
                 }}
-                // onMouseEnter={() => {
-                //   setactiveTag(tag)
-                //   settagChange(true)
-                // }}
+                onMouseEnter={() => {
+                  setactiveTag(tag)
+                  settagChange(true)
+                  handleMenu(true)
+                  // setMenuOpen(true)
+                }}
               >{tag}</button>
             )
           })
         }
       </div>
 
-      <ul className='projectlist'>
+      <ul className='projectlist' style={{ display: menuOpen ? 'flex' : 'none' }}>
         {
           projectlist.map((project, i) => {
             return (
@@ -72,7 +77,7 @@ query {
                 index={i}
                 activeTag={activeTag}
                 workpost={!tagChange && workpost}
-                hiddenTag={hiddenTag} 
+                hiddenTag={hiddenTag}
                 scrollLazy={scrollLazy}
               />
             )
