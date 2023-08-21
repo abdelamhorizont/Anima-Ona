@@ -78,21 +78,6 @@ collections:
            }
           ]
         }
-      - {
-          label: Content,
-          name: content,
-          widget: list,
-          fields:
-            [
-              { 
-                label: Columns, 
-                name: columns, 
-                widget: select,
-                options: ["1", "2", "3", "12"] 
-              },
-              { label: Body, name: body, widget: markdown, required: false },
-            ],
-        }
       - { 
           label: "Tags", 
           name: "tags", 
