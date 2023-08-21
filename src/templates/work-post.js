@@ -34,7 +34,7 @@ const BlogPost = ({ data }) => {
       })
     } */}
 
-    {
+    {/* {
       post.frontmatter?.variable_content?.map((content) => {
         if(content.type == 'text-section') {
           return(
@@ -46,7 +46,7 @@ const BlogPost = ({ data }) => {
           )
         }
       })
-    }
+    } */}
       <Projectlist />
       <div className="empty-page-fill"> </div>
     </Layout>
