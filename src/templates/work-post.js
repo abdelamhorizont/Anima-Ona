@@ -69,7 +69,6 @@ export const pageQuery = graphql`
         featuredimage
         variable_content {
           type
-          columns
           text
         }
       }
