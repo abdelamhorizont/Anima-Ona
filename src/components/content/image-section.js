@@ -10,9 +10,6 @@ import { Swiper, SwiperSlide } from 'swiper/react'
 import { Navigation, Pagination, A11y } from 'swiper';
 
 import './content.scss'
-// import 'swiper/css'
-// import 'swiper/scss/navigation';
-// import 'swiper/scss/pagination';
 
 
 const MyImage = props => {
@@ -40,17 +37,6 @@ const ImageSection = ({ content, columns }) => {
 
   const navigationPrevRef = React.useRef(null)
   const navigationNextRef = React.useRef(null)
-
-  // const componentRef = useRef();
-
-  // useEffect(() => {
-  //   setimgArray(inlineArray)
-  // }, [inlineArray])
-
-  // useEffect(() => {
-  //   componentRef.current.children[0].onClick = () => setimgClick(true)
-  // }, [componentRef])
-
 
   const gridclass = 'col-' + columns
   return (
