@@ -19,12 +19,13 @@ nicht möglich:
 to do: 
 - landing video 
 ? schrift
-- menu display
-- slider
+x menu display
+x slider
 - pages: contact, imprint etc
 - mobile check
 - projectlist img view work-post
 - projectlist ende der seite
+- slider nur bei 12er
 
 
 

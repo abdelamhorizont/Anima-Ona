@@ -56,8 +56,18 @@ collections:
                label: Images,
                name: images,
                widget: list,
-               field: { label: Image, name: image, widget: image, required: false },         
-               } 
+               field: 
+               { 
+                label: Bild,
+                name: bild,
+                widget: object,
+                fields:
+                [
+                  {label: Image, name: image, widget: image, required: false },         
+                  {label: Beschreibung, name: beschreibung, widget: "string", default: '' }         
+                ] 
+                }
+              }
             ]
            },
            { 
