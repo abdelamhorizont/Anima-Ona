@@ -71,19 +71,6 @@ export const pageQuery = graphql`
           type
           columns
           text
-          images {
-            childImageSharp {
-              fluid(fit: CONTAIN) {
-                base64
-                tracedSVG
-                srcWebp
-                srcSetWebp
-                originalImg
-                originalName
-              }
-              gatsbyImageData
-            }
-          }
         }
       }
     }
