@@ -4,12 +4,6 @@ title: Liquid Sandstone Stool
 date: 2023-06-27T16:06:38.085Z
 featuredimage: img/dsc02991_1.jpeg
 variable-content:
-  - type: image-section
-    columns: "1"
-    images:
-        image:
-          image: /img/dscf0001_1.jpeg
-          caption: Ausstellungsansicht 2022
   - type: text-section
     text: >-
       Over a period of two years (2019-2022), we investigated the major
@@ -23,29 +17,6 @@ variable-content:
 
 
       The various contributions to the project offer the possibility of an interactive debate and create reference between layering, reinterpretation and superimposition. They celebrate the unfinished, the transformation process and highlight the spatial and aesthetic qualities of urban space. At the same time, the work can be understood as a documentation for the future. When the process of construction is completely displaced and no longer perceptible. The digital archive [www.cite-mine.online](www.cite-mine.online), the video work „Momentaufnahmen“, the spatial installation Erdraum and a publication are results of this research work.
-  - type: image-section
-    columns: "12"
-    images:
-      - /img/2019_10_r1-04836-0008_1.jpeg
-      - /img/2019_10_r1-04836-0017_1.jpeg
-      - /img/2019_10_r1-04836-0018_1.jpeg
-      - /img/2019_10_r1-04879-0010_1.jpeg
-      - /img/2019_10_r1-04880-027a_1.jpeg
-      - /img/2019_10_r1-04880-027a_1.jpeg
-      - /img/2021_05_r1-00174-004a_1.jpeg
-      - /img/2021_10_r1-04287-025a_1.jpeg
-      - /img/r1-04288-027a_1.jpeg
-      - /img/2019_10_r1-04836-0008_1.jpeg
-      - /img/2019_10_r1-04836-0017_1.jpeg
-      - /img/2021_05_r1-00174-004a_1.jpeg
-      - /img/2019_10_r1-04880-027a_1.jpeg
-      - /img/2019_10_r1-04879-0010_1.jpeg
-  - type: image-section
-    columns: "3"
-    images:
-      - ""
-      - /img/dscf0034_1.jpeg
-      - /img/dscf0037_1.jpeg
   - type: text-section
     text: >-
       Over a period of two years (2019-2022), we investigated the major
@@ -59,10 +30,6 @@ variable-content:
 
 
       The various contributions to the project offer the possibility of an interactive debate and create reference between layering, reinterpretation and superimposition. They celebrate the unfinished, the transformation process and highlight the spatial and aesthetic qualities of urban space. At the same time, the work can be understood as a documentation for the future. When the process of construction is completely displaced and no longer perceptible. The digital archive [www.cite-mine.online](www.cite-mine.online), the video work „Momentaufnahmen“, the spatial installation Erdraum and a publication are results of this research work.
-  - type: image-section
-    columns: "1"
-    images:
-      - /img/besucherinnen_brāhha_00904_1.jpeg
   - type: text-section
     text: >-
       Notes, References and External Links
