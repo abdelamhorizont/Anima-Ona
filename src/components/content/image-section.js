@@ -18,10 +18,6 @@ const MyImage = props => {
     setFullSize(true)
   }
 
-  useEffect(() => {
-    // console.log(fullSize)
-  }, [fullSize])
-
   return (
     <img
       className={fullSize ? "large" : "small"}
