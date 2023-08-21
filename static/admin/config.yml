@@ -58,8 +58,8 @@ collections:
                widget: list,
                field: 
                { 
-                label: Bild,
-                name: bild,
+                label: Image,
+                name: image,
                 widget: object,
                 fields:
                 [
