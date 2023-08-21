@@ -7,7 +7,9 @@ variable-content:
   - type: image-section
     columns: "1"
     images:
-      - /img/dscf0001_1.jpeg
+      - bild:
+          image: /img/dscf0001_1.jpeg
+          caption: Ausstellungsansicht 2022
   - type: text-section
     text: >-
       Over a period of two years (2019-2022), we investigated the major
