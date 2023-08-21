@@ -46,7 +46,7 @@ const ImageSection = ({ content, columns }) => {
             return (
               <div onClick={() => setimgClick(true)}>
                 <GatsbyImage image={myimage} alt={''} />
-                <p className="caption">Ausstellungsansicht 2022</p>
+                <p className="caption"></p>
               </div>
             )
           })
