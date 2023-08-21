@@ -4,6 +4,12 @@ title: Liquid Sandstone Stool
 date: 2023-06-27T16:06:38.085Z
 featuredimage: img/dsc02991_1.jpeg
 variable-content:
+  - type: image-section
+    columns: "1"
+    images:
+      - image:
+          image: /img/dscf0001_1.jpeg
+          caption: Ausstellungsansicht 2022
   - type: text-section
     text: >-
       Over a period of two years (2019-2022), we investigated the major
