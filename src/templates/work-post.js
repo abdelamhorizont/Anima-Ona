@@ -35,7 +35,7 @@ const BlogPost = ({ data }) => {
     } */}
 
     {
-      post.frontmatter.variable_content.map((content) => {
+      post.frontmatter?.variable_content?.map((content) => {
         if(content.type == 'text-section') {
           return(
             <TextSection content={content.text} columns={'2'} />
