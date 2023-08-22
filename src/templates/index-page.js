@@ -69,10 +69,10 @@ const IndexPage = ({ data }) => {
         </div>
       </motion.div>
 
-      <div className="empty-page-fill" style={{height: '500px'}}> </div>
+      {/* <div className="empty-page-fill" style={{height: '500px'}}> </div> */}
     
       <motion.div>
-        <Layout scrollLazy={scrollLazy}>
+        <Layout sites={data.allMarkdownRemark.edges} scrollLazy={scrollLazy}>
           {/* cookies */}
           {/* <div className="empty-page-fill" style={{height: '49vh'}}> </div> */}
         </Layout>
@@ -96,6 +96,24 @@ export const pageQuery = graphql`
         }
         heading
         subheading
+      }
+    }
+    allMarkdownRemark(
+      filter: {frontmatter: {templateKey: {eq: "work-post"}}}
+      sort: {fields: frontmatter___date, order: DESC}
+    ) {
+      edges {
+        node {
+          fields {
+            slug
+          }
+          frontmatter {
+            title
+            date(formatString: "YYYY")
+            tags
+            featuredimage
+          }
+        }
       }
     }
   }

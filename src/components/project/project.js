@@ -1,5 +1,5 @@
 import { Link } from '@reach/router';
-import React, { useState, useEffect, useRef } from 'react'
+import React, { useState, useEffect, useRef, useLayoutEffect } from 'react'
 import { motion, useInView, useScroll, useTransform, useSpring, AnimatePresence } from "framer-motion"
 
 function randomNumber(min, max) { // min and max included
@@ -12,11 +12,32 @@ export default function Project({ menuOpen, project, index, activeTag, workpost,
     const isBrowser = () => typeof window !== "undefined"
     const mobile = isBrowser() && window.screen.width < 720
 
-    const marginTitle = React.useMemo(() => randomNumber(0, 30), [])
+    const marginTitle = React.useMemo(() => randomNumber(0, window.screen.width * 0.2), [])
     const [imageShown, setImageShown] = useState(false);
 
     const ref = useRef(null);
     const isInView = useInView(ref, { once: true, margin: "0px 0px -500px 0px" });
+
+    const imgRef = useRef(null);
+    const [imgWidth, setimgWidth] = useState(0)
+  
+    const textRef = useRef(null);
+    const [textWidth, settextWidth] = useState(0)
+    const [textPos, settextPos] = useState(0)
+
+    useEffect(() => {
+        setTimeout(() => {
+            setimgWidth(imgRef.current?.clientWidth)
+            settextWidth(textRef.current?.clientWidth)
+            settextPos(textRef.current?.offsetLeft)
+        }, "100")
+    }, [])
+
+    const imageStyle = {
+        opacity: imageShown ? 1 : 0,
+        left: ((textPos + (textWidth /2) - (imgWidth / 2)) + 'px') 
+    }
+
 
     const { scrollYProgress } = useScroll();
     const scrollLazy = useTransform(
@@ -46,10 +67,10 @@ export default function Project({ menuOpen, project, index, activeTag, workpost,
                     to={project.node.fields.slug}
                     onMouseEnter={() => setImageShown(true)}
                     onMouseLeave={() => setImageShown(false)}
-                    style={{ marginLeft: marginTitle + 'vw' }}
+                    style={{ marginLeft: marginTitle + 'px' }}
                 >
 
-                    <h1>
+                    <h1 ref={textRef}>
                         {project.node.frontmatter.title}
                     </h1>
 
@@ -57,12 +78,12 @@ export default function Project({ menuOpen, project, index, activeTag, workpost,
 
                 </Link>
 
-                {
-                    !mobile &&
-                    <div className='image-contaner' style={{ opacity: imageShown ? 1 : 0 }}>
-                        <img src={"" + project.node.frontmatter.featuredimage} alt="" />
-                    </div>
-                }
+                {/* {
+                    !mobile && */}
+                <div ref={imgRef} className='image-contaner' style={imageStyle}>
+                    <img src={project.node.frontmatter.featuredimage} alt="" />
+                </div>
+                {/* } */}
             </motion.li>
 
         </>

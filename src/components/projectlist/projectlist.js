@@ -10,7 +10,7 @@ function randomNumber(min, max) { // min and max included
   )
 }
 
-export default function Projectlist({handleMenu, menuOpen, workpost, hiddenTag, scrollLazy }) {
+export default function Projectlist({sites, handleMenu, menuOpen, workpost, hiddenTag, scrollLazy }) {
   const data = useStaticQuery(graphql`
 query {
   allMarkdownRemark(
@@ -40,7 +40,13 @@ query {
   const [tagChange, settagChange] = useState(false)
 
   const tags = ["All", "Object", "Space", "Research", "Exhibition"]
-  const projectlist = data.allMarkdownRemark.edges
+  // const projectlist = sites[0]
+  const projectlist = data.allMarkdownRemark.edges 
+
+  useEffect(() => {
+    // console.log(sites);
+    // console.log(projectlist);
+  }, [])
 
   return (
     <div className='menu'>

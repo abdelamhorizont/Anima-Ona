@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import PropTypes from "prop-types";
 import { kebabCase } from "lodash";
 import { Helmet } from "react-helmet";
@@ -16,29 +16,27 @@ const BlogPost = ({ data }) => {
   const { markdownRemark: post } = data;
   const [hiddenTag, setHiddenTag] = useState(post.frontmatter.title)
 
-  // console.log(post.frontmatter.content)
-
   return (
-    <Layout workpost={true} hiddenTag={hiddenTag}>
+    <Layout sites={data.allMarkdownRemark.edges} workpost={true} hiddenTag={hiddenTag}>
 
       <div className="work-title">
         <h1> {post.frontmatter.title}</h1>
         <h3> {post.frontmatter.date} </h3>
       </div>
 
-    {
-      post.frontmatter?.variable_content?.map((content) => {
-        if(content.type == 'text-section') {
-          return(
-            <TextSection content={content.text} columns={'2'} />
+      {
+        post.frontmatter?.variable_content?.map((content) => {
+          if (content.type == 'text-section') {
+            return (
+              <TextSection content={content.text} columns={'2'} />
             )
-        } else if (content.type == 'image-section') {
-          return(
-            <ImageSection content={content} columns={content.columns} />
-          )
-        }
-      })
-    }
+          } else if (content.type == 'image-section') {
+            return (
+              <ImageSection content={content} columns={content.columns} />
+            )
+          }
+        })
+      }
       <Projectlist />
       <div className="empty-page-fill"> </div>
     </Layout>
@@ -72,6 +70,24 @@ export const pageQuery = graphql`
               }
               caption
             }
+          }
+        }
+      }
+    }
+    allMarkdownRemark(
+      filter: {frontmatter: {templateKey: {eq: "work-post"}}}
+      sort: {fields: frontmatter___date, order: DESC}
+    ) {
+      edges {
+        node {
+          fields {
+            slug
+          }
+          frontmatter {
+            title
+            date(formatString: "YYYY")
+            tags
+            featuredimage
           }
         }
       }

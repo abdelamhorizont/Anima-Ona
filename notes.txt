@@ -14,18 +14,18 @@ nicht möglich:
 - fixed menu open? titel?
 - workseiten Raster, bild über zweidrittel nicht möglich 
 - about seite seperat
-- slides
 
 to do: 
 - landing video 
 ? schrift
 x menu display
-- slider index
+? slider index
 - pages: contact, imprint etc
 - mobile check
-- projectlist img view work-post
+- menu featuredimg work-post: gatsbyImageData oder pass die srcs
 - projectlist ende der seite
 x slider nur bei 12er
+- small text
 
 
 
@@ -36,10 +36,5 @@ FEEDBACK:
 
 - tagliste im Menü verschwindet beim runterscrollen, taucht auf beim hochscrollen
 
-x Menü button zum ein- und ausblenden 
-
 - unterschiedliche Inhalte im backend für desktop und mobile
 
-x verschiedene Rasteroptionen bei aufeinanderfolgenden Bildern 
-
-- Slider

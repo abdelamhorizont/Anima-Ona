@@ -1,5 +1,5 @@
-import React from "react";
-import { Link, graphql } from "gatsby";
+import React, { useEffect } from "react";
+import { Link, graphql, useStaticQuery } from "gatsby";
 import { getImage, GatsbyImage } from "gatsby-plugin-image";
 import { motion, AnimatePresence } from "framer-motion"
 
@@ -14,13 +14,35 @@ import '../styles/typo.scss'
 
 import '../styles/index.scss'
 
-const AboutPage = ({ data }) => {
-  const { html } = data.markdownRemark
+const AboutPage = () => {
+  const data = useStaticQuery(graphql`
+  query {
+  allMarkdownRemark(filter: {frontmatter: {templateKey: {eq: "about-page"}}}) {
+    edges {
+      node {
+        html
+        frontmatter {
+          title
+        }
+      }
+    }
+  }
+}
+  `)
+
+  const { html } = data.allMarkdownRemark.edges[0].node
+  
+  useEffect(() => {
+    console.log(html);
+  }, [])
+
 
   return (
-    <Layout workpost={true} >
-      {/* <HTMLContent content={html} /> */}
-    </Layout>
+    // <Layout sites={data.allMarkdownRemark.edges} workpost={true} >
+    <div className="about-page">
+      <HTMLContent content={html} />
+    </div>
+    // </Layout>
   )
 }
 
@@ -28,13 +50,31 @@ const AboutPage = ({ data }) => {
 
 export default AboutPage;
 
-export const aboutPageQuery = graphql`
-  query AboutPage($id: String!) {
-    markdownRemark(id: { eq: $id }) {
-      html
-      frontmatter {
-        title
-      }
-    }
-  }
-`;
+// export const aboutPageQuery = graphql`
+//   query AboutPage($id: String!) {
+//     markdownRemark(id: { eq: $id }) {
+//       html
+//       frontmatter {
+//         title
+//       }
+//     }
+//     allMarkdownRemark(
+//       filter: {frontmatter: {templateKey: {eq: "work-post"}}}
+//       sort: {fields: frontmatter___date, order: DESC}
+//     ) {
+//       edges {
+//         node {
+//           fields {
+//             slug
+//           }
+//           frontmatter {
+//             title
+//             date(formatString: "YYYY")
+//             tags
+//             featuredimage
+//           }
+//         }
+//       }
+//     }
+//   }
+// `;

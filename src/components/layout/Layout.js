@@ -5,12 +5,14 @@ import useSiteMetadata from "../SiteMetadata";
 import { withPrefix, Link } from "gatsby";
 
 import Projectlist from "../projectlist/projectlist";
+import AboutPage from "../../templates/about-page";
 
 import './layout.scss'
 
-const Layout = ({ children, workpost, hiddenTag, scrollLazy }) => {
+const Layout = ({ children, sites, workpost, hiddenTag, scrollLazy }) => {
   const { title, description } = useSiteMetadata();
   const [menuOpen, setMenuOpen] = useState(!workpost)
+  const [aboutOpen, setAboutOpen] = useState(false)
 
   const handleMenu = (menu) => {
     setMenuOpen(menu)
@@ -40,6 +42,10 @@ const Layout = ({ children, workpost, hiddenTag, scrollLazy }) => {
         />
       </Helmet>
 
+    <div className="about-page-wrapper" style={{top: aboutOpen ? 0 : -1000}}>
+      <AboutPage />
+    </div>
+
     <div className="nav" style={workpost && navStyle} onClick={() => setMenuOpen(false)}>
       <div className="nav-bar" >
         <div className="logo">
@@ -48,11 +54,12 @@ const Layout = ({ children, workpost, hiddenTag, scrollLazy }) => {
         </div>
         <div className="nav-links">
           <Link to="/contact">Contact</Link>
-          <Link to="/about">About</Link>
-          {/* <div className="menu-button">
-            <button style={{display: menuOpen && 'none'}} onClick={() => setMenuOpen(true)}>Menu</button>
-            <button style={{display: !menuOpen && 'none'}} onClick={() => setMenuOpen(false)}>X</button>
-          </div> */}
+          {/* <Link to="/about">About</Link> */}
+          {/* <button  onClick={() => setAboutOpen(true)}>About</button> */}
+          <div className="menu-button">
+            <button style={{display: aboutOpen && 'none'}} onClick={() => setAboutOpen(true)}>About</button>
+            <button style={{display: !aboutOpen && 'none'}} onClick={() => setAboutOpen(false)}>Close</button>
+          </div>
         </div>
       </div>
 
@@ -60,7 +67,7 @@ const Layout = ({ children, workpost, hiddenTag, scrollLazy }) => {
         // workpost && <div className="nav-bar-fill-space"></div>
       }
 
-      <Projectlist handleMenu={handleMenu} menuOpen={menuOpen} workpost={workpost} hiddenTag={hiddenTag} scrollLazy={scrollLazy} />
+      <Projectlist sites={sites} handleMenu={handleMenu} menuOpen={menuOpen} workpost={workpost} hiddenTag={hiddenTag} scrollLazy={scrollLazy} />
     </div>
 
       <div>{children}</div>
