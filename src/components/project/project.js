@@ -11,8 +11,9 @@ function randomNumber(min, max) { // min and max included
 export default function Project({ menuOpen, project, index, activeTag, workpost, hiddenTag }) {
     const isBrowser = () => typeof window !== "undefined"
     const mobile = isBrowser() && window.screen.width < 720
+    const windowWidth = isBrowser() && window.screen.width 
 
-    const marginTitle = React.useMemo(() => randomNumber(0, window.screen.width * 0.2), [])
+    const marginTitle = React.useMemo(() => randomNumber(0, windowWidth * 0.2), [])
     const [imageShown, setImageShown] = useState(false);
 
     const ref = useRef(null);
