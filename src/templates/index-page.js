@@ -69,7 +69,7 @@ const IndexPage = ({ data }) => {
         </div>
       </motion.div>
 
-      {/* <div className="empty-page-fill" style={{height: '500px'}}> </div> */}
+      {/* <div className="empty-page-fill" style={{height: '5000px'}}> </div> */}
     
       <motion.div>
         <Layout sites={data.allMarkdownRemark.edges} scrollLazy={scrollLazy}>
