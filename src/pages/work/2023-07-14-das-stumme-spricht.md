@@ -3,6 +3,7 @@ templateKey: work-post
 title: Das Stumme spricht
 date: 2023-07-14T11:00:23.983Z
 featuredimage: img/1_mrt_0342_1.jpeg
+cover-image: /img/1_mrt_0342_1.jpeg
 tags:
   - Exhibition
   - Space
