@@ -2,6 +2,12 @@
 templateKey: work-post
 title: "Archaeology of a city mine "
 date: 2022-10-01T10:38:37.776Z
+featuredimage: img/dscf0001_1.jpeg
+cover-image: /img/dscf0034_1.jpeg
+featuredpost: true
+tags:
+  - Exhibition
+  - Space
 description: >
   Over a period of two years (2019-2022), we investigated the major construction
   site »Stuttgart 21« in an artistic-experimental way. The construction site was
@@ -10,13 +16,7 @@ description: >
   site, collecting finds,3D scanning them, archiving them, and examining them
   for their aesthetic and functional characteristics. In a kind of modern
   palimpsesting process, the finds were further processed, thus giving them a
-  new value. 
-featuredpost: true
-featuredimage: img/dscf0001_1.jpeg
-
-tags:
-  - Exhibition
-  - Space
+  new value.
 ---
 ![stool made out of glass](/img/dscf0001_1.jpeg "liquid sand stool, 2018")
 
