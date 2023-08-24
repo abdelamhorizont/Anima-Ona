@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Link, graphql } from "gatsby";
 import { getImage, GatsbyImage } from "gatsby-plugin-image";
 import { motion, useScroll, useTransform, useSpring } from "framer-motion"
@@ -15,7 +15,8 @@ import '../styles/index.scss'
 
 const IndexPage = ({ data }) => {
   const { frontmatter } = data.markdownRemark
-  const image = getImage(frontmatter.image)
+  const image = getImage(frontmatter.landingvideo)
+  const [scrollY, setscrollY] = useState(0)
 
   const { scrollYProgress } = useScroll();
   const scaleX = useSpring(scrollYProgress)
@@ -35,7 +36,12 @@ const IndexPage = ({ data }) => {
     useSpring(scrollYProgress),
     [0, 1],
     [0, 5]
-)
+  )
+
+  useEffect(() => {
+    setscrollY(scrollLazy)
+  }, [scrollLazy])
+
   // console.log(scrollYProgress);
 
   return (
@@ -69,12 +75,11 @@ const IndexPage = ({ data }) => {
         </div>
       </motion.div>
 
-      {/* <div className="empty-page-fill" style={{height: '500px'}}> </div> */}
-    
+      <div className="empty-page-fill" style={{ height: '70vh' }}> </div>
+
       <motion.div>
-        <Layout sites={data.allMarkdownRemark.edges} scrollLazy={scrollLazy}>
+        <Layout sites={data.allMarkdownRemark.edges} scrollLazy={scrollY}>
           {/* cookies */}
-          {/* <div className="empty-page-fill" style={{height: '49vh'}}> </div> */}
         </Layout>
       </motion.div>
     </>

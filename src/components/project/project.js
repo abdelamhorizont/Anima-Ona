@@ -30,32 +30,50 @@ export default function Project({ menuOpen, project, index, activeTag, workpost,
     const [textPos, settextPos] = useState(0)
 
     useEffect(() => {
+        // setimgWidth(myimage.width)
+
         setTimeout(() => {
             setimgWidth(imgRef.current?.clientWidth)
             settextWidth(textRef.current?.clientWidth)
             settextPos(textRef.current?.offsetLeft)
-        }, "100")
+        }, "2000")
     }, [])
 
     const imageStyle = {
         opacity: imageShown ? 1 : 0,
-        left: ((textPos + (textWidth / 2) - (imgWidth / 2)) + 'px')
+        // left: ((marginTitle * 0.01 * windowWidth) - (myimage.width/2)  + 'px')
+        // left: ((textPos + (textWidth / 2) - (imgWidth / 2)) + 'px')
+        left: index % 2 == 0 ?
+            ((marginTitle * 0.01 * windowWidth) - (myimage.width / 2) + 'px')
+            :
+            (((windowWidth / 2) + (marginTitle * 0.01 * windowWidth)) - (myimage.width / 2) + 'px')
     }
 
 
+    const [scrollY, setscrollY] = useState(0)
     const { scrollYProgress } = useScroll();
     const scrollLazy = useTransform(
-        useSpring(scrollYProgress),
-        [0.0, 1.0],
-        [1, 5]
+        scrollYProgress,
+        [0, 1],
+        [index * 50, 0]
     )
+
+    useEffect(() => {
+        workpost ? setscrollY(0) : setscrollY(scrollLazy)
+    }, [scrollY])
+
+    useEffect(() => {
+        console.log(workpost);
+    }, [])
 
     const projectStyle = {
         // marginTop: isInView ? "none" : "50px",
         // transform: isInView ? "none" : "translateY(100px)",
-        // transition: "all 0.5s ease 1.5s",
+        transition: "all 0.5s ease" + index + "s",
         opacity: menuOpen ? 1.0 : 0.0,
-        // marginTop: !workpost && scrollLazy + 'vh'
+        // marginTop: scrollY + 'vh'
+        // transform: 'translateY(scrollYProgress * 10)',
+        marginTop: scrollY
     }
 
     return (
@@ -72,6 +90,7 @@ export default function Project({ menuOpen, project, index, activeTag, workpost,
                     onMouseEnter={() => setImageShown(true)}
                     onMouseLeave={() => setImageShown(false)}
                     style={{ marginLeft: marginTitle + 'vw' }}
+                    className={workpost ? 'white' : 'black'}
                 >
 
                     <h1 ref={textRef}>
@@ -88,6 +107,9 @@ export default function Project({ menuOpen, project, index, activeTag, workpost,
                     <GatsbyImage
                         image={myimage}
                         alt={''}
+                        imageStyle={{
+                            isolation: 'isolate'
+                        }}
                     />
                     {/* <img src={project.node.frontmatter.featuredimage} alt="" /> */}
                 </div>

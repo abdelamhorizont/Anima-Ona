@@ -19,9 +19,9 @@ const Layout = ({ children, sites, workpost, hiddenTag, scrollLazy }) => {
   }
 
   const navStyle = {
-    position: 'fixed',
+    position: workpost && 'fixed',
     // mixBlendMode: 'difference',
-    backdropFilter: menuOpen && 'blur(10px)',
+    backdropFilter: (workpost) && 'blur(10px)',
     height: menuOpen && '95vh',
   }
 
@@ -42,11 +42,11 @@ const Layout = ({ children, sites, workpost, hiddenTag, scrollLazy }) => {
         />
       </Helmet>
 
-    <div className="about-page-wrapper" style={{top: aboutOpen ? 0 : -1000}}>
+    <div className="about-page-wrapper" style={{top: aboutOpen ? 30 : -1000}}>
       <AboutPage />
     </div>
 
-    <div className="nav" style={workpost && navStyle} onClick={() => setMenuOpen(false)}>
+    <div className="nav" style={navStyle} onClick={() => { workpost  && setMenuOpen(false)}}>
       <div className="nav-bar" >
         <div className="logo">
           <Link to="/" className="title"><h1>anima ona</h1></Link>

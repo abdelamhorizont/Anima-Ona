@@ -38,10 +38,6 @@ const ImageSection = ({ content, columns }) => {
     setindex(i)
   }
 
-  useEffect(() => {
-    console.log(index);
-  }, [index])
-
   // const [swiper, setSwiper] = useState(null);
   // const slideTo = (index) => swiper.slideTo(index);
 

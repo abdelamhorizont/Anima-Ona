@@ -53,7 +53,7 @@ const AboutPage = () => {
             objectFit: `contain`,
             width: '66.6%',
             margin: '1.5rem',
-            // isolation: 'isolate'
+            isolation: 'isolate'
           }}
         />
         <p className="caption">{picture.caption}</p>

@@ -15,8 +15,9 @@
             height: 3rem;
             margin-bottom: 2rem;
             overflow: hidden;
+            margin-top: 0;
             // mix-blend-mode: difference;
-            transition: all 0.5s ease;
+            // transition: all 0.5s ease;
 
             a {
                 display: flex;
@@ -40,7 +41,6 @@
             }
 
             .image-contaner {
-                mix-blend-mode:unset;
 
                 position: fixed;
                 z-index: 10;
@@ -95,8 +95,8 @@
 
             .image-contaner {
                 // filter: blur(10px);
+                display: none;
                 opacity: 0;
-                mix-blend-mode: normal;
                 z-index: 10;
             }
 
@@ -115,9 +115,12 @@
     }
 
     .tags {
-        display: flex;
+        // display: flex;
+        // justify-content: space-between;
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+
         width: calc(100vw - 3rem);
-        justify-content: space-between;
         margin: 2rem 0rem;
         // gap: 1rem;
 

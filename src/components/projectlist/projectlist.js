@@ -45,17 +45,11 @@ query {
   const [tagChange, settagChange] = useState(false)
 
   const tags = ["All", "Object", "Space", "Research", "Exhibition"]
-  // const projectlist = sites[0]
   const projectlist = data.allMarkdownRemark.edges 
-
-  useEffect(() => {
-    // console.log(sites);
-    // console.log(projectlist);
-  }, [])
 
   return (
     <div className='menu'>
-      <div className='tags' style={{ opacity: menuOpen ? 1 : 1 }}>
+      <div className='tags' style={{ opacity: menuOpen ? 1 : 1, marginBottom: menuOpen ? '2rem' : '0rem' }}>
         {
           tags.map(tag => {
             return (
