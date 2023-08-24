@@ -9,8 +9,6 @@ anima-ona-image:
   image: /img/anima_ona_2100x.webp
   caption: anima ona
 ---
-![ Freia Achenbach und June Fàbregas](/img/anima_ona_2100x.webp "anima ona")
-
 anima ona ist ein multidisziplinäres Studio, bestehend aus Freia Achenbach und June Fàbregas. Das Duo studierte an der Staatlichen Akademie der Bildenden Künste Stuttgart. Einem transdisziplinären und kollaborativen Ansatz folgend, entwickeln sie seit 2018 selbstinitiierte Projekte und verwirklichen Auftragsarbeiten, wobei sie sich an der Grenze zwischen Design, Forschung und Kunst bewegen. Ihre vielfältigen Arbeiten eint die Suche nach bisher unausgeschöpften Ressourcen und Möglichkeiten der Wiederverwendung des Materials, der sie durch experimentelle Herangehensweisen und der Auseinandersetzung der kulturellen Bedeutung von Objekten nachkommen.
 
 * ### Upcoming Shows
@@ -87,7 +85,7 @@ anima ona ist ein multidisziplinäres Studio, bestehend aus Freia Achenbach und 
   2022	In Fülle… Transoformation zum Geopolymer Ausstellungskatalog, Hospitalhof Stuttgart
 
   2022	Pillow Talk anima ona × Studio Eidola, Collectible Salon
-              *  08/2022, [Link zum Text ](www.google.com)*
+               * 08/2022, [Link zum Text ](www.google.com)*
 
   2021	Anima Ona repurposes scrap gravestone for sculptural side tables, Dezeen
                *09/2021,[ Link zum Text](www.google.com)*
