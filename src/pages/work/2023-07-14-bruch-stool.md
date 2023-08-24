@@ -3,6 +3,7 @@ templateKey: work-post
 title: Bruch Stool
 date: 2020-09-08T11:01:49.376Z
 featuredimage: img/dsc02991_1.jpeg
+cover-image: /img/dsc02991_1.jpeg
 tags:
   - Object
 ---
