@@ -26,6 +26,11 @@ query {
           title
           date(formatString: "YYYY")
           featuredimage
+          cover_image {
+            childImageSharp {
+              gatsbyImageData
+            }
+          }
           tags
         }
       }

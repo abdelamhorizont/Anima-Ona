@@ -1,6 +1,7 @@
 import { Link } from '@reach/router';
 import React, { useState, useEffect, useRef, useLayoutEffect } from 'react'
 import { motion, useInView, useScroll, useTransform, useSpring, AnimatePresence } from "framer-motion"
+import { getImage, GatsbyImage } from "gatsby-plugin-image";
 
 function randomNumber(min, max) { // min and max included
     return (
@@ -9,9 +10,11 @@ function randomNumber(min, max) { // min and max included
 }
 
 export default function Project({ menuOpen, project, index, activeTag, workpost, hiddenTag }) {
+    const myimage = getImage(project.node.frontmatter?.cover_image)
+
     const isBrowser = () => typeof window !== "undefined"
     const mobile = isBrowser() && window.screen.width < 720
-    const windowWidth = isBrowser() && window.screen.width 
+    const windowWidth = isBrowser() && window.screen.width
 
     const marginTitle = React.useMemo(() => randomNumber(0, 30), [])
     const [imageShown, setImageShown] = useState(false);
@@ -21,7 +24,7 @@ export default function Project({ menuOpen, project, index, activeTag, workpost,
 
     const imgRef = useRef(null);
     const [imgWidth, setimgWidth] = useState(0)
-  
+
     const textRef = useRef(null);
     const [textWidth, settextWidth] = useState(0)
     const [textPos, settextPos] = useState(0)
@@ -36,7 +39,7 @@ export default function Project({ menuOpen, project, index, activeTag, workpost,
 
     const imageStyle = {
         opacity: imageShown ? 1 : 0,
-        left: ((textPos + (textWidth /2) - (imgWidth / 2)) + 'px') 
+        left: ((textPos + (textWidth / 2) - (imgWidth / 2)) + 'px')
     }
 
 
@@ -82,7 +85,11 @@ export default function Project({ menuOpen, project, index, activeTag, workpost,
                 {/* {
                     !mobile && */}
                 <div ref={imgRef} className='image-contaner' style={imageStyle}>
-                    <img src={project.node.frontmatter.featuredimage} alt="" />
+                    <GatsbyImage
+                        image={myimage}
+                        alt={''}
+                    />
+                    {/* <img src={project.node.frontmatter.featuredimage} alt="" /> */}
                 </div>
                 {/* } */}
             </motion.li>

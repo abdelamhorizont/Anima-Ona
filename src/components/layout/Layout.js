@@ -20,7 +20,7 @@ const Layout = ({ children, sites, workpost, hiddenTag, scrollLazy }) => {
 
   const navStyle = {
     position: 'fixed',
-    mixBlendMode: 'difference',
+    // mixBlendMode: 'difference',
     backdropFilter: menuOpen && 'blur(10px)',
     height: menuOpen && '95vh',
   }
