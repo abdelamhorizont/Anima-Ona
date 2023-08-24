@@ -13,7 +13,7 @@ export default function Project({ menuOpen, project, index, activeTag, workpost,
     const mobile = isBrowser() && window.screen.width < 720
     const windowWidth = isBrowser() && window.screen.width 
 
-    const marginTitle = React.useMemo(() => randomNumber(0, windowWidth * 0.2), [])
+    const marginTitle = React.useMemo(() => randomNumber(0, 30), [])
     const [imageShown, setImageShown] = useState(false);
 
     const ref = useRef(null);
@@ -68,7 +68,7 @@ export default function Project({ menuOpen, project, index, activeTag, workpost,
                     to={project.node.fields.slug}
                     onMouseEnter={() => setImageShown(true)}
                     onMouseLeave={() => setImageShown(false)}
-                    style={{ marginLeft: marginTitle + 'px' }}
+                    style={{ marginLeft: marginTitle + 'vw' }}
                 >
 
                     <h1 ref={textRef}>
