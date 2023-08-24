@@ -5,6 +5,9 @@ path: /about
 image:
   image: /img/anima_ona_2100x.webp
   caption: Anima Ona
+anima-ona-image:
+  image: /img/anima_ona_2100x.webp
+  caption: anima ona
 ---
 ![ Freia Achenbach und June Fàbregas](/img/anima_ona_2100x.webp "anima ona")
 
