@@ -2,6 +2,9 @@
 templateKey: about-page
 title: about anima ona
 path: /about
+image:
+  image: /img/anima_ona_2100x.webp
+  caption: Anima Ona
 ---
 ![ Freia Achenbach und June Fàbregas](/img/anima_ona_2100x.webp "anima ona")
 
