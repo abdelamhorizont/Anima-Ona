@@ -23,6 +23,14 @@ const AboutPage = () => {
         html
         frontmatter {
           title
+          anima_ona_image {
+            caption
+            image {
+              childImageSharp {
+                gatsbyImageData
+              }
+            }
+          }
         }
       }
     }
@@ -31,15 +39,25 @@ const AboutPage = () => {
   `)
 
   const { html } = data.allMarkdownRemark.edges[0].node
-  
-  useEffect(() => {
-    console.log(html);
-  }, [])
-
+  const picture = data.allMarkdownRemark.edges[0].node.frontmatter.anima_ona_image
+  const myimage = getImage(picture.image)
 
   return (
     // <Layout sites={data.allMarkdownRemark.edges} workpost={true} >
     <div className="about-page">
+      <div className="about-page-image">
+        <GatsbyImage
+          image={myimage}
+          alt={''}
+          style={{
+            objectFit: `contain`,
+            width: '66.6%',
+            margin: '1.5rem',
+            // isolation: 'isolate'
+          }}
+        />
+        <p className="caption">{picture.caption}</p>
+      </div>
       <HTMLContent content={html} />
     </div>
     // </Layout>

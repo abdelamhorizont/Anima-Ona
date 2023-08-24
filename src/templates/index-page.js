@@ -69,7 +69,7 @@ const IndexPage = ({ data }) => {
         </div>
       </motion.div>
 
-      {/* <div className="empty-page-fill" style={{height: '5000px'}}> </div> */}
+      {/* <div className="empty-page-fill" style={{height: '500px'}}> </div> */}
     
       <motion.div>
         <Layout sites={data.allMarkdownRemark.edges} scrollLazy={scrollLazy}>
@@ -89,6 +89,11 @@ export const pageQuery = graphql`
     markdownRemark(frontmatter: { templateKey: { eq: "index-page" } }) {
       frontmatter {
         title
+        landingvideo {
+          childImageSharp {
+            gatsbyImageData(quality: 100, layout: FULL_WIDTH)
+          }
+        }
         heading
         subheading
       }
