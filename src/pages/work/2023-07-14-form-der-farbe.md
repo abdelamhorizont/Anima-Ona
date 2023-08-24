@@ -3,6 +3,7 @@ templateKey: work-post
 title: Form der Farbe
 date: 2018-10-08T11:03:13.159Z
 featuredimage: img/formofcolors2.jpeg
+cover-image: /img/formofcolors2.jpeg
 tags:
   - Research
 ---
