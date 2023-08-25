@@ -18,7 +18,7 @@ listedInfos:
             location: Stuttgart, GER
         - listElement:
             year: 07.06. – 15.07.23
-            title: "\aForma Gallery, Gruppenausstellung "
+            title: "Forma Gallery, Gruppenausstellung "
             location: Berlin, GER
   - column:
       title: Exhibitions, Talks, Awards and Scholarships
