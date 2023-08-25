@@ -94,6 +94,12 @@ collections:
             ],
         }
       - {
+          label: "Project Infos",
+          name: "projectInfos",
+          widget: "markdown",
+          required: false,      
+        } 
+      - {
           label: "Tags",
           name: "tags",
           widget: "select",
@@ -115,6 +121,16 @@ collections:
               default: "index-page",
             }
           - { label: "Title", name: "title", widget: "string" }
+          - {
+              label: "Video",
+              name: "video",
+              widget: "object",
+              fields: 
+              [
+                { label: "Video File", name: "videoFile", widget: file, required: false },
+                { label: "Fallback Image", name: "fallbackImage", widget: image, required: false }
+              ]
+            }
           - { label: "Landing Video", name: "landingvideo", widget: "image" }
           - { label: "Heading", name: "heading", widget: "string" }
           - { label: "Subheading", name: "subheading", widget: "string" }
@@ -150,3 +166,40 @@ collections:
                 ],
             }
           - { label: "Body", name: "body", widget: "markdown" }
+          - {
+              label: "listes Infos",
+              name: "listedInfos",
+              widget: "list",
+              field:
+                {
+                  label: "Column",
+                  name: "column",
+                  widget: "object",
+                  fields:
+                  [
+                    { label: "Title", name: "title", widget: "string", required: false},
+                    {
+                      label: "List", 
+                      name: "list",
+                      widget: "list",
+                      field:
+                        {
+                          label: "List Element",
+                          name: "listElement",
+                          widget: "object",
+                          fields: 
+                           [
+                            { label: "Year", name: "year", widget: "string", required: false},
+                            { label: "Title", name: "title", widget: "string", required: false},
+                            { label: "Location", name: "location", widget: "string", required: false},
+                            { label: "Link", name: "link", widget: "object", fields: [
+                              { label: "Link", name: "link", widget: "string", required: false},
+                              { label: "Link Text", name: "linkText", widget: "string", required: false},
+                            ]},
+                          ]
+                        }
+                    }
+                  ]
+                }
+                
+            }

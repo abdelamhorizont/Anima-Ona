@@ -10,7 +10,7 @@ function randomNumber(min, max) { // min and max included
   )
 }
 
-export default function Projectlist({sites, handleMenu, menuOpen, workpost, hiddenTag, scrollLazy }) {
+export default function Projectlist({handleMenu, menuOpen, workpost, hiddenTag }) {
   const data = useStaticQuery(graphql`
 query {
   allMarkdownRemark(
@@ -53,20 +53,22 @@ query {
         {
           tags.map(tag => {
             return (
-              <button
-                className={tag != activeTag && 'inactiveTag'}
-                onClick={() => {
-                  setactiveTag(tag)
-                  settagChange(true)
-                  handleMenu(true)
-                }}
-                onMouseEnter={() => {
-                  setactiveTag(tag)
-                  settagChange(true)
-                  handleMenu(true)
-                  // setMenuOpen(true)
-                }}
-              >{tag}</button>
+              <div>
+                <button
+                  className={tag != activeTag && 'inactiveTag'}
+                  onClick={() => {
+                    setactiveTag(tag)
+                    settagChange(true)
+                    handleMenu(true)
+                  }}
+                  onMouseEnter={() => {
+                    setactiveTag(tag)
+                    settagChange(true)
+                    handleMenu(true)
+                    // setMenuOpen(true)
+                  }}
+                >{tag}</button>
+              </div>
             )
           })
         }
@@ -83,7 +85,6 @@ query {
                 activeTag={activeTag}
                 workpost={!tagChange && workpost}
                 hiddenTag={hiddenTag}
-                scrollLazy={scrollLazy}
               />
             )
           })

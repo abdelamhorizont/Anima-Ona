@@ -54,8 +54,10 @@ export default function Project({ menuOpen, project, index, activeTag, workpost,
     const { scrollYProgress } = useScroll();
     const scrollLazy = useTransform(
         scrollYProgress,
-        [0, 1],
-        [index * 50, 0]
+        [0, index * 0.09],
+        [150, 0]
+        // [0, 1],
+        // [index * 50, 0]
     )
 
     useEffect(() => {

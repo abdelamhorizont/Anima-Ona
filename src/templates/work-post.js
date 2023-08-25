@@ -37,7 +37,8 @@ const BlogPost = ({ data }) => {
           }
         })
       }
-      <Projectlist />
+
+      {/* <Projectlist handleMenu={handleMenu} menuOpen={menuOpen} workpost={workpost} hiddenTag={hiddenTag} scrollLazy={scrollLazy} /> */}
       <div className="empty-page-fill"> </div>
     </Layout>
   )

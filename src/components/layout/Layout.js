@@ -9,7 +9,7 @@ import AboutPage from "../../templates/about-page";
 
 import './layout.scss'
 
-const Layout = ({ children, sites, workpost, hiddenTag, scrollLazy }) => {
+const Layout = ({ children, workpost, hiddenTag }) => {
   const { title, description } = useSiteMetadata();
   const [menuOpen, setMenuOpen] = useState(!workpost)
   const [aboutOpen, setAboutOpen] = useState(false)
@@ -22,7 +22,7 @@ const Layout = ({ children, sites, workpost, hiddenTag, scrollLazy }) => {
     position: workpost && 'fixed',
     // mixBlendMode: 'difference',
     backdropFilter: (workpost) && 'blur(10px)',
-    height: menuOpen && '95vh',
+    height: menuOpen && '94vh',
   }
 
   return (
@@ -42,35 +42,35 @@ const Layout = ({ children, sites, workpost, hiddenTag, scrollLazy }) => {
         />
       </Helmet>
 
-    <div className="about-page-wrapper" style={{top: aboutOpen ? 30 : -1000}}>
-      <AboutPage />
-    </div>
-
-    <div className="nav" style={navStyle} onClick={() => { workpost  && setMenuOpen(false)}}>
-      <div className="nav-bar" >
-        <div className="logo">
-          <Link to="/" className="title"><h1>anima ona</h1></Link>
-          <div className="subtitle"><h2>studio for research, art and design</h2></div>
-        </div>
-        <div className="nav-links">
-          <Link to="/contact">Contact</Link>
-          {/* <Link to="/about">About</Link> */}
-          {/* <button  onClick={() => setAboutOpen(true)}>About</button> */}
-          <div className="menu-button">
-            <button style={{display: aboutOpen && 'none'}} onClick={() => setAboutOpen(true)}>About</button>
-            <button style={{display: !aboutOpen && 'none'}} onClick={() => setAboutOpen(false)}>Close</button>
-          </div>
-        </div>
+      <div className="about-page-wrapper" style={{ top: aboutOpen ? 30 : -1000 }}>
+        <AboutPage />
       </div>
 
-      {
-        // workpost && <div className="nav-bar-fill-space"></div>
-      }
+      <div className="nav" style={navStyle} onClick={() => { workpost && setMenuOpen(false) }}>
+        <div className="nav-bar" >
+          <div className="logo">
+            <Link to="/" className="title"><h1>anima ona</h1></Link>
+            <div className="subtitle"><h2>studio for research, art and design</h2></div>
+          </div>
+          <div className="nav-links">
+            <Link to="/contact">Contact</Link>
+            {/* <Link to="/about">About</Link> */}
+            {/* <button  onClick={() => setAboutOpen(true)}>About</button> */}
+            <div className="menu-button">
+              <button style={{ display: aboutOpen && 'none' }} onClick={() => setAboutOpen(true)}>About</button>
+              <button style={{ display: !aboutOpen && 'none' }} onClick={() => setAboutOpen(false)}>Close</button>
+            </div>
+          </div>
+        </div>
 
-      <Projectlist sites={sites} handleMenu={handleMenu} menuOpen={menuOpen} workpost={workpost} hiddenTag={hiddenTag} scrollLazy={scrollLazy} />
-    </div>
+        <Projectlist handleMenu={handleMenu} menuOpen={menuOpen} workpost={workpost} hiddenTag={hiddenTag} />
+      </div>
 
       <div>{children}</div>
+
+      {/* {workpost &&
+        <Projectlist handleMenu={handleMenu} menuOpen={true} workpost={false} hiddenTag={hiddenTag} />
+      } */}
 
       <div className="footer">
         <div className="contact">
