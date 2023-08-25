@@ -16,6 +16,7 @@ import '../styles/index.scss'
 const IndexPage = ({ data }) => {
   const { frontmatter } = data.markdownRemark
   const image = getImage(frontmatter.landingvideo)
+  const videoUrl = frontmatter.video.videoFile.publicURL
   const [scrollY, setscrollY] = useState(0)
 
   const { scrollYProgress } = useScroll();
@@ -48,25 +49,19 @@ const IndexPage = ({ data }) => {
     <>
       <motion.div
         className="landing-anim"
-        // initial={{ 
-        //   opacity: 1, 
-        //   filter: 'blur(0px)'
-        // }}
-        // animate={{
-        //   opacity: 0, 
-        //   filter: 'blur(10px)',
-        //   transitionEnd: {
-        //     display: "none",
-        //   },
-        // }}
-        // transition={{ duration: 1.5, delay: 1 }}
         style={{ opacity: scrollOpacity, filter: scrollBlur }}
       >
-        <GatsbyImage
+        {/* <GatsbyImage
           image={image}
           alt=""
           className="landing-image"
-        />
+        /> */}
+
+        <video key={videoUrl} muted autoPlay loop webkit-playsinline="true" playsInline>
+          <source src={videoUrl} type="video/mp4" />
+        </video>
+
+
         <div className="landing-text-wrapper">
           <div className="landing-text">
             <h1 className="title">{frontmatter.title}</h1>
@@ -99,26 +94,13 @@ export const pageQuery = graphql`
             gatsbyImageData(quality: 100, layout: FULL_WIDTH)
           }
         }
-        heading
-        subheading
-      }
-    }
-    allMarkdownRemark(
-      filter: {frontmatter: {templateKey: {eq: "work-post"}}}
-      sort: {fields: frontmatter___date, order: DESC}
-    ) {
-      edges {
-        node {
-          fields {
-            slug
-          }
-          frontmatter {
-            title
-            date(formatString: "YYYY")
-            tags
-            featuredimage
+        video {
+          videoFile {
+            publicURL
           }
         }
+        heading
+        subheading
       }
     }
   }

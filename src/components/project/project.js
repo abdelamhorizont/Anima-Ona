@@ -54,7 +54,7 @@ export default function Project({ menuOpen, project, index, activeTag, workpost,
     const { scrollYProgress } = useScroll();
     const scrollLazy = useTransform(
         scrollYProgress,
-        [0, index * 0.09],
+        [0, 0.2 + index * 0.08],
         [150, 0]
         // [0, 1],
         // [index * 50, 0]
@@ -71,7 +71,7 @@ export default function Project({ menuOpen, project, index, activeTag, workpost,
     const projectStyle = {
         // marginTop: isInView ? "none" : "50px",
         // transform: isInView ? "none" : "translateY(100px)",
-        transition: "all 0.5s ease" + index + "s",
+        transition: "all 0.5s ease " + 0.4 + "s",
         opacity: menuOpen ? 1.0 : 0.0,
         // marginTop: scrollY + 'vh'
         // transform: 'translateY(scrollYProgress * 10)',

@@ -31,6 +31,22 @@ const AboutPage = () => {
               }
             }
           }
+          listedInfos {
+            column {
+              title
+              list {
+                listElement {
+                  year
+                  title
+                  location
+                  link {
+                    link
+                    linkText
+                  }
+                }
+              }
+            }
+          }
         }
       }
     }
@@ -40,10 +56,15 @@ const AboutPage = () => {
 
   const { html } = data.allMarkdownRemark.edges[0].node
   const picture = data.allMarkdownRemark.edges[0].node.frontmatter.anima_ona_image
+  const list = data.allMarkdownRemark.edges[0].node.frontmatter.listedInfos
   const myimage = getImage(picture.image)
 
+  useEffect(() => {
+    console.log(list.column);
+  }, [])
+
+
   return (
-    // <Layout sites={data.allMarkdownRemark.edges} workpost={true} >
     <div className="about-page">
       <div className="about-page-image">
         <GatsbyImage
@@ -53,14 +74,58 @@ const AboutPage = () => {
             objectFit: `contain`,
             width: '66.6%',
             margin: '1.5rem',
+            marginTop: '0',
             isolation: 'isolate'
           }}
         />
-        <p className="caption">{picture.caption}</p>
+        {/* <p className="caption">{picture.caption}</p> */}
       </div>
+
       <HTMLContent content={html} />
+
+      <div className="html-content">
+        <ul>
+          {
+            list?.map(list => {
+              return (
+                <li>
+                  <h1>
+                    {list?.column?.title}
+                  </h1>
+                  <ul>
+                    {
+                      list?.column?.list?.map(list => {
+                        return (
+                          <li>
+                            {list?.listElement?.year &&
+                              <div className="list-year">{list?.listElement?.year}</div>
+                            }
+                            {list?.listElement?.title &&
+                              <div className="list-text">
+                                <div> {list?.listElement?.title}</div>
+                                <div className="list-text-small">
+                                  {list?.listElement?.location &&
+                                    <div className="list-location"> {list?.listElement?.location}</div>
+                                  }
+                                  {list?.listElement?.link &&
+                                    <a className="list-link" href={list?.listElement?.link?.link}>{list?.listElement?.link?.linkText}</a>
+                                  }
+                                </div>
+                              </div>
+                            }
+                          </li>
+                        )
+                      })
+                    }
+                  </ul>
+                </li>
+              )
+            })
+          }
+        </ul>
+      </div>
+
     </div>
-    // </Layout>
   )
 }
 

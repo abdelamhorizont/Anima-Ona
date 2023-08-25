@@ -38,8 +38,15 @@ const BlogPost = ({ data }) => {
         })
       }
 
+      {
+        post.frontmatter?.projectInfos &&
+        <div className="project-infos">
+          <TextSection content={post.frontmatter?.projectInfos} columns={''} />
+        </div>
+      }
+
       {/* <Projectlist handleMenu={handleMenu} menuOpen={menuOpen} workpost={workpost} hiddenTag={hiddenTag} scrollLazy={scrollLazy} /> */}
-      <div className="empty-page-fill"> </div>
+      {/* <div className="empty-page-fill"> </div> */}
     </Layout>
   )
 }
@@ -73,6 +80,7 @@ export const pageQuery = graphql`
             }
           }
         }
+        projectInfos
       }
     }
     allMarkdownRemark(

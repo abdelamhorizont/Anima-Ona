@@ -42,7 +42,7 @@ const Layout = ({ children, workpost, hiddenTag }) => {
         />
       </Helmet>
 
-      <div className="about-page-wrapper" style={{ top: aboutOpen ? 30 : -1000 }}>
+      <div className="about-page-wrapper" style={{ top: aboutOpen ? 60 : -1000 }}>
         <AboutPage />
       </div>
 
