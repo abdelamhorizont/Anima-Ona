@@ -4,13 +4,8 @@ import { Link, useStaticQuery, graphql } from "gatsby";
 import Project from '../project/project'
 import './projectlist.scss'
 
-function randomNumber(min, max) { // min and max included
-  return (
-    Math.floor(Math.random() * (max - min + 1) + min)
-  )
-}
 
-export default function Projectlist({handleMenu, menuOpen, workpost, hiddenTag }) {
+export default function Projectlist({ handleMenu, menuOpen, workpost, hiddenTag }) {
   const data = useStaticQuery(graphql`
 query {
   allMarkdownRemark(
@@ -39,17 +34,25 @@ query {
   }
 `)
 
-  // const [menuOpen, setMenuOpen] = useState(!workpost)
+  const isBrowser = () => typeof window !== "undefined"
+  const mobile = isBrowser() && window.screen.width < 720
 
   const [activeTag, setactiveTag] = useState('All')
   const [tagChange, settagChange] = useState(false)
+  // const [menuOpen, setMenuOpen] = useState(menuOpen)
+
 
   const tags = ["All", "Object", "Space", "Research", "Exhibition"]
-  const projectlist = data.allMarkdownRemark.edges 
+  const projectlist = data.allMarkdownRemark.edges
+
+  const projectlistStyle = {
+    display: menuOpen && mobile ? 'block' : 'flex',
+    height: menuOpen ? 'auto' : '0px' 
+  }
 
   return (
     <div className='menu'>
-      <div className='tags' style={{ opacity: menuOpen ? 1 : 1, marginBottom: menuOpen ? '2rem' : '0rem' }}>
+      <div className='tags' style={{ marginBottom: menuOpen ? '2rem' : '0rem' }}>
         {
           tags.map(tag => {
             return (
@@ -65,7 +68,6 @@ query {
                     setactiveTag(tag)
                     settagChange(true)
                     handleMenu(true)
-                    // setMenuOpen(true)
                   }}
                 >{tag}</button>
               </div>
@@ -74,7 +76,9 @@ query {
         }
       </div>
 
-      <ul className='projectlist' style={{ display: menuOpen ? 'flex' : 'none' }}>
+      <ul className={'projectlist'} style={projectlistStyle}>
+      {/* <ul className={menuOpen ? 'projectlist flex-block' : 'projectlist hidden'}> */}
+
         {
           projectlist.map((project, i) => {
             return (

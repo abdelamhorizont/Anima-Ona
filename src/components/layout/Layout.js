@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Helmet } from "react-helmet";
 
 import useSiteMetadata from "../SiteMetadata";
@@ -14,13 +14,20 @@ const Layout = ({ children, workpost, hiddenTag }) => {
   const [menuOpen, setMenuOpen] = useState(!workpost)
   const [aboutOpen, setAboutOpen] = useState(false)
 
+  const isBrowser = () => typeof window !== "undefined"
+  const mobile = isBrowser() && window.screen.width < 720
+  
   const handleMenu = (menu) => {
     setMenuOpen(menu)
   }
 
+  useEffect(() => {
+    console.log(menuOpen);
+  }, [menuOpen])
+  
+
   const navStyle = {
     position: workpost && 'fixed',
-    // mixBlendMode: 'difference',
     backdropFilter: (workpost) && 'blur(10px)',
     height: menuOpen && '94vh',
   }
@@ -47,6 +54,8 @@ const Layout = ({ children, workpost, hiddenTag }) => {
       </div>
 
       <div className="nav" style={navStyle} onClick={() => { workpost && setMenuOpen(false) }}>
+      {/* <div className="nav" style={navStyle} onClick={() => { (workpost && !mobile) && setMenuOpen(false) }}> */}
+
         <div className="nav-bar" >
           <div className="logo">
             <Link to="/" className="title"><h1>anima ona</h1></Link>

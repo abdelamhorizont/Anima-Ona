@@ -44,7 +44,7 @@ export default function Project({ menuOpen, project, index, activeTag, workpost,
         // left: ((marginTitle * 0.01 * windowWidth) - (myimage.width/2)  + 'px')
         // left: ((textPos + (textWidth / 2) - (imgWidth / 2)) + 'px')
         left: index % 2 == 0 ?
-            ((marginTitle * 0.01 * windowWidth) - (myimage.width / 2) + 'px')
+            ((marginTitle * 0.01 * windowWidth) - (myimage?.width / 2) + 'px')
             :
             (((windowWidth / 2) + (marginTitle * 0.01 * windowWidth)) - (myimage.width / 2) + 'px')
     }
@@ -56,8 +56,6 @@ export default function Project({ menuOpen, project, index, activeTag, workpost,
         scrollYProgress,
         [0, 0.2 + index * 0.08],
         [150, 0]
-        // [0, 1],
-        // [index * 50, 0]
     )
 
     useEffect(() => {
@@ -69,12 +67,8 @@ export default function Project({ menuOpen, project, index, activeTag, workpost,
     }, [])
 
     const projectStyle = {
-        // marginTop: isInView ? "none" : "50px",
-        // transform: isInView ? "none" : "translateY(100px)",
         transition: "all 0.5s ease " + 0.4 + "s",
         opacity: menuOpen ? 1.0 : 0.0,
-        // marginTop: scrollY + 'vh'
-        // transform: 'translateY(scrollYProgress * 10)',
         marginTop: scrollY
     }
 
@@ -103,19 +97,18 @@ export default function Project({ menuOpen, project, index, activeTag, workpost,
 
                 </Link>
 
-                {/* {
-                    !mobile && */}
-                <div ref={imgRef} className='image-contaner' style={imageStyle}>
-                    <GatsbyImage
-                        image={myimage}
-                        alt={''}
-                        imageStyle={{
-                            isolation: 'isolate'
-                        }}
-                    />
-                    {/* <img src={project.node.frontmatter.featuredimage} alt="" /> */}
-                </div>
-                {/* } */}
+                {
+                    !mobile &&
+                    <div ref={imgRef} className='image-contaner' style={imageStyle}>
+                        <GatsbyImage
+                            image={myimage}
+                            alt={''}
+                            imageStyle={{
+                                isolation: 'isolate'
+                            }}
+                        />
+                    </div>
+                }
             </motion.li>
 
         </>

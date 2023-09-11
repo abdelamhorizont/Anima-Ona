@@ -8,11 +8,14 @@
         font-family: "Arial";
         font-size: 1.4rem;
         width: calc(100vw - 3rem);
+        // height: 100vh;
+        display: block;
 
         overflow: hidden;
 
         li {
             height: 3rem;
+            // width: 100vw;
             margin-bottom: 2rem;
             overflow: hidden;
             margin-top: 0;
@@ -115,10 +118,10 @@
     }
 
     .tags {
-        // display: flex;
-        // justify-content: space-between;
-        display: grid;
-        grid-template-columns: repeat(5, 1fr);
+        display: flex;
+        justify-content: space-between;
+        // display: grid;
+        // grid-template-columns: repeat(5, 1fr);
 
         width: calc(100vw - 3rem);
         margin: 2rem 0rem;
@@ -171,6 +174,14 @@
     }
 }
 
+.flex-block{
+    display: block;
+}
+
+.hidden{
+    display: none;
+}
+
 @media screen and (min-width: 720px) {
 
     .menu {
@@ -195,8 +206,14 @@
         }
 
         .tags {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
             font-size: 1.4rem;
         }
     }
+}
 
+.flex-block{
+    display: flex;
+    flex-wrap: wrap;
 }
